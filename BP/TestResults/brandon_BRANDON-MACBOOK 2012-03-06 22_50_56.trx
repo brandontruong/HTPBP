@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="ad8c9c70-0eeb-433a-9641-eee2521841cb" name="brandon@BRANDON-MACBOOK 2012-03-06 22:50:56" runUser="BRANDON-MACBOOK\brandon" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="fd7590e6-c488-4f11-be34-4b0ea9c16ff0">
+    <Deployment runDeploymentRoot="brandon_BRANDON-MACBOOK 2012-03-06 22_50_56">
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\System.Web.WebPages.Razor.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\System.Web.WebPages.Deployment.dll" />
+      <DeploymentItem filename="C:\Users\brandon\Documents\Visual Studio 2010\Projects\BP\BP.Domain\bin\Debug\BP.Domain.dll" />
+      <DeploymentItem filename="C:\Users\brandon\Documents\Visual Studio 2010\Projects\BP\BP\packages\Moq.4.0.10827\lib\NET40\Moq.dll" />
+      <DeploymentItem filename="C:\Users\brandon\Documents\Visual Studio 2010\Projects\BP\BP.Tests\bin\Debug\System.Web.Optimization.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\System.Web.Helpers.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Web.Http.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Web.Http.Common.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\System.Web.WebPages.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Web.Http.WebHost.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Net.Http.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\Microsoft.Web.Infrastructure.dll" />
+      <DeploymentItem filename="C:\Users\brandon\Documents\Visual Studio 2010\Projects\BP\BP.Tests\bin\Debug\AutoMapper.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Net.Http.Formatting.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\System.Web.Razor.dll" />
+      <DeploymentItem filename="C:\Users\brandon\Documents\Visual Studio 2010\Projects\BP\BP\bin\BP.dll" />
+      <DeploymentItem filename="C:\Users\brandon\Documents\Visual Studio 2010\Projects\BP\BP.Tests\bin\Debug\Ninject.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Json.dll" />
+      <DeploymentItem filename="C:\Users\brandon\Documents\Visual Studio 2010\Projects\BP\BP\bin\System.Web.Providers.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Net.Http.WebRequest.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-03-06T22:50:56.4617523+11:00" queuing="2012-03-06T22:50:59.2279105+11:00" start="2012-03-06T22:50:59.5339280+11:00" finish="2012-03-06T22:51:02.4570952+11:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="6" executed="6" passed="6" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="Contact" storage="c:\users\brandon\documents\visual studio 2010\projects\bp\bp.tests\bin\debug\bp.tests.dll" id="ea4a2b95-1822-9e02-6db9-3417e79623e1">
+      <Execution id="0096cd8e-fa13-4ca1-9044-168e332f9973" />
+      <TestMethod codeBase="C:/Users/brandon/Documents/Visual Studio 2010/Projects/BP/BP.Tests/bin/Debug/BP.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BP.Tests.Controllers.HomeControllerTest, BP.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Contact" />
+    </UnitTest>
+    <UnitTest name="About" storage="c:\users\brandon\documents\visual studio 2010\projects\bp\bp.tests\bin\debug\bp.tests.dll" id="3ec0e846-f452-7139-f337-cd4e5179a22f">
+      <Execution id="5f06fbf6-3475-44e7-acd7-2eff8950244e" />
+      <TestMethod codeBase="C:/Users/brandon/Documents/Visual Studio 2010/Projects/BP/BP.Tests/bin/Debug/BP.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BP.Tests.Controllers.HomeControllerTest, BP.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="About" />
+    </UnitTest>
+    <UnitTest name="RegisterTest" storage="c:\users\brandon\documents\visual studio 2010\projects\bp\bp.tests\bin\debug\bp.tests.dll" id="88f23de9-645b-a575-1f6d-baaa97789e1e">
+      <Execution id="efa76733-5193-436c-9897-623f0a2507c7" />
+      <TestMethod codeBase="C:/Users/brandon/Documents/Visual Studio 2010/Projects/BP/BP.Tests/bin/Debug/BP.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BP.Tests.AccountControllerTest, BP.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="RegisterTest" />
+    </UnitTest>
+    <UnitTest name="IsValidLoginTest" storage="c:\users\brandon\documents\visual studio 2010\projects\bp\bp.tests\bin\debug\bp.tests.dll" id="b8801b29-4153-1868-2223-0e52a256beac">
+      <Execution id="dabaca2b-1826-442e-a014-208ce53f2256" />
+      <TestMethod codeBase="C:/Users/brandon/Documents/Visual Studio 2010/Projects/BP/BP.Tests/bin/Debug/BP.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BP.Tests.AccountRepositoryTest, BP.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="IsValidLoginTest" />
+    </UnitTest>
+    <UnitTest name="LoginTest" storage="c:\users\brandon\documents\visual studio 2010\projects\bp\bp.tests\bin\debug\bp.tests.dll" id="2204d628-eec4-8545-47a7-edc82416b334">
+      <Execution id="5d6a049d-fdfb-43d1-aa46-0892ab2fc162" />
+      <TestMethod codeBase="C:/Users/brandon/Documents/Visual Studio 2010/Projects/BP/BP.Tests/bin/Debug/BP.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BP.Tests.AccountControllerTest, BP.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="LoginTest" />
+    </UnitTest>
+    <UnitTest name="Index" storage="c:\users\brandon\documents\visual studio 2010\projects\bp\bp.tests\bin\debug\bp.tests.dll" id="6f5ead05-4e19-39c8-f983-f94bd38c6832">
+      <Execution id="1d5ca2f6-b73c-46cf-a31a-6155e291cb6b" />
+      <TestMethod codeBase="C:/Users/brandon/Documents/Visual Studio 2010/Projects/BP/BP.Tests/bin/Debug/BP.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BP.Tests.Controllers.HomeControllerTest, BP.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="Index" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="6f5ead05-4e19-39c8-f983-f94bd38c6832" executionId="1d5ca2f6-b73c-46cf-a31a-6155e291cb6b" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="3ec0e846-f452-7139-f337-cd4e5179a22f" executionId="5f06fbf6-3475-44e7-acd7-2eff8950244e" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="ea4a2b95-1822-9e02-6db9-3417e79623e1" executionId="0096cd8e-fa13-4ca1-9044-168e332f9973" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="88f23de9-645b-a575-1f6d-baaa97789e1e" executionId="efa76733-5193-436c-9897-623f0a2507c7" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="2204d628-eec4-8545-47a7-edc82416b334" executionId="5d6a049d-fdfb-43d1-aa46-0892ab2fc162" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestEntry testId="b8801b29-4153-1868-2223-0e52a256beac" executionId="dabaca2b-1826-442e-a014-208ce53f2256" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="1d5ca2f6-b73c-46cf-a31a-6155e291cb6b" testId="6f5ead05-4e19-39c8-f983-f94bd38c6832" testName="Index" computerName="BRANDON-MACBOOK" duration="00:00:00.3471697" startTime="2012-03-06T22:50:59.7649412+11:00" endTime="2012-03-06T22:51:01.6900513+11:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="1d5ca2f6-b73c-46cf-a31a-6155e291cb6b">
+    </UnitTestResult>
+    <UnitTestResult executionId="5f06fbf6-3475-44e7-acd7-2eff8950244e" testId="3ec0e846-f452-7139-f337-cd4e5179a22f" testName="About" computerName="BRANDON-MACBOOK" duration="00:00:00.0448534" startTime="2012-03-06T22:51:01.7070523+11:00" endTime="2012-03-06T22:51:01.7580552+11:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5f06fbf6-3475-44e7-acd7-2eff8950244e">
+    </UnitTestResult>
+    <UnitTestResult executionId="0096cd8e-fa13-4ca1-9044-168e332f9973" testId="ea4a2b95-1822-9e02-6db9-3417e79623e1" testName="Contact" computerName="BRANDON-MACBOOK" duration="00:00:00.0389769" startTime="2012-03-06T22:51:01.7870569+11:00" endTime="2012-03-06T22:51:01.8330595+11:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="0096cd8e-fa13-4ca1-9044-168e332f9973">
+    </UnitTestResult>
+    <UnitTestResult executionId="efa76733-5193-436c-9897-623f0a2507c7" testId="88f23de9-645b-a575-1f6d-baaa97789e1e" testName="RegisterTest" computerName="BRANDON-MACBOOK" duration="00:00:00.4401184" startTime="2012-03-06T22:51:01.8400599+11:00" endTime="2012-03-06T22:51:02.2850854+11:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="efa76733-5193-436c-9897-623f0a2507c7">
+    </UnitTestResult>
+    <UnitTestResult executionId="5d6a049d-fdfb-43d1-aa46-0892ab2fc162" testId="2204d628-eec4-8545-47a7-edc82416b334" testName="LoginTest" computerName="BRANDON-MACBOOK" duration="00:00:00.0191894" startTime="2012-03-06T22:51:02.2990862+11:00" endTime="2012-03-06T22:51:02.3270878+11:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="5d6a049d-fdfb-43d1-aa46-0892ab2fc162">
+    </UnitTestResult>
+    <UnitTestResult executionId="dabaca2b-1826-442e-a014-208ce53f2256" testId="b8801b29-4153-1868-2223-0e52a256beac" testName="IsValidLoginTest" computerName="BRANDON-MACBOOK" duration="00:00:00.0003620" startTime="2012-03-06T22:51:02.3340882+11:00" endTime="2012-03-06T22:51:02.3410886+11:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="dabaca2b-1826-442e-a014-208ce53f2256">
+    </UnitTestResult>
+  </Results>
+</TestRun>

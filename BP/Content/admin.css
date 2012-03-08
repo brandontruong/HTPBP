@@ -1,0 +1,48 @@
+﻿div.left 
+{
+    width: 300px;
+    display: inline-block;
+    background: yellow;
+}
+
+div.left ul
+{
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+div.left ul li a
+{
+    display: block;
+    background: gray;
+    padding: 10px;
+    text-decoration: none;
+}
+
+div.left ul li ul a
+{
+    display: block;
+    background: #EEE;
+    border: solid #BBB 1px;
+    padding-left: 50px;
+}
+
+div.left ul li ul a:hover
+{
+    background: #BBB;
+}
+
+
+div.left ul li ul li a.active
+{
+    background: #CCC;
+}
+
+div.right 
+{
+    vertical-align: top;
+    width: auto;
+    display: inline-block;
+    
+}

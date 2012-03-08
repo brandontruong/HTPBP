@@ -1,0 +1,12 @@
+﻿@using System.Web.Mvc;
+@helper Script(string scriptName, UrlHelper url, string areaName = "")
+    {
+    if (string.IsNullOrEmpty(areaName))
+    {
+    <script src="@url.Content("~/Scripts/" + scriptName)" type="text/javascript"></script>
+    }
+    else
+    {
+        <script src="@url.Content("~/Areas/" + areaName + "/Scripts/" + scriptName)" type="text/javascript"></script>
+    }
+}

@@ -1,0 +1,13 @@
+﻿div.left 
+{
+    width: 20%;
+    float: left;
+    background: yellow;
+}
+
+div.right 
+{
+    width: 79%;
+    float: left;
+    background: red;
+}

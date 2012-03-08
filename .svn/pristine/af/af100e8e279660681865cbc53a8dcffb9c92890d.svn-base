@@ -1,0 +1,65 @@
+﻿<RecentFiles>
+  <RecentFiles>
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Entities/f:UserProfiles.cs" caret="31" fromTop="2" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Infrastructure/f:CustomMembershipProvider.cs" caret="4989" fromTop="78" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:MyNinjectModules.cs" caret="294" fromTop="10" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:ViewModels/f:RegisterViewModel.cs" caret="136" fromTop="0" />
+    <File id="EEDDF3F2-C072-4F32-8E45-E2BEDDBF3D78/d:Controllers/f:HomeControllerTest.cs" caret="341" fromTop="3" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:HomeController.cs" caret="0" fromTop="0" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Abstract/f:IRepository.cs" caret="679" fromTop="20" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Entities/f:Organization.cs" caret="95" fromTop="6" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Entities/f:User.cs" caret="179" fromTop="6" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Abstract/f:IAccountRepository.cs" caret="282" fromTop="13" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Infrastructure/f:NinjectControllerFactory.cs" caret="1078" fromTop="5" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/f:Web.config" caret="707" fromTop="9" />
+    <File id="EEDDF3F2-C072-4F32-8E45-E2BEDDBF3D78/f:AccountRepositoryTest.cs" caret="2624" fromTop="20" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:BPContext.cs" caret="372" fromTop="11" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Models/f:AccountModels.cs" caret="0" fromTop="0" />
+    <File id="EEDDF3F2-C072-4F32-8E45-E2BEDDBF3D78/f:AccountControllerTest.cs" caret="664" fromTop="9" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:MilestoneController.cs" caret="686" fromTop="15" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Abstract/f:IUnitOfWork.cs" caret="312" fromTop="11" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:UnitOfWork.cs" caret="392" fromTop="0" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:Shared/f:_Layout.cshtml" caret="0" fromTop="0" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/f:Global.asax.cs" caret="0" fromTop="0" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:Admin/f:Index.cshtml" caret="43" fromTop="1" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:ViewModels/d:Admin/f:AdminViewModel.cs" caret="196" fromTop="10" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:AccountController.cs" caret="5126" fromTop="18" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:AccountRepository.cs" caret="920" fromTop="7" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:GenericRepository.cs" caret="1154" fromTop="16" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:ViewModels/d:Admin/f:MilestoneViewModel.cs" caret="114" fromTop="6" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Entities/f:Milestone.cs" caret="102" fromTop="5" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:AdminController.cs" caret="925" fromTop="10" />
+  </RecentFiles>
+  <RecentEdits>
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:AccountController.cs" caret="4818" fromTop="10" />
+    <File id="EEDDF3F2-C072-4F32-8E45-E2BEDDBF3D78/f:AccountControllerTest.cs" caret="2489" fromTop="6" />
+    <File id="EEDDF3F2-C072-4F32-8E45-E2BEDDBF3D78/f:AccountControllerTest.cs" caret="2814" fromTop="14" />
+    <File id="EEDDF3F2-C072-4F32-8E45-E2BEDDBF3D78/f:AccountControllerTest.cs" caret="2695" fromTop="5" />
+    <File id="EEDDF3F2-C072-4F32-8E45-E2BEDDBF3D78/f:AccountControllerTest.cs" caret="2685" fromTop="4" />
+    <File id="EEDDF3F2-C072-4F32-8E45-E2BEDDBF3D78/f:AccountControllerTest.cs" caret="3741" fromTop="20" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:AccountController.cs" caret="2595" fromTop="20" />
+    <File id="EEDDF3F2-C072-4F32-8E45-E2BEDDBF3D78/f:AccountControllerTest.cs" caret="2697" fromTop="9" />
+    <File id="EEDDF3F2-C072-4F32-8E45-E2BEDDBF3D78/f:AccountControllerTest.cs" caret="3118" fromTop="14" />
+    <File id="EEDDF3F2-C072-4F32-8E45-E2BEDDBF3D78/f:AccountControllerTest.cs" caret="3266" fromTop="7" />
+    <File id="EEDDF3F2-C072-4F32-8E45-E2BEDDBF3D78/f:AccountControllerTest.cs" caret="3730" fromTop="15" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:MilestoneController.cs" caret="661" fromTop="14" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Abstract/f:IUnitOfWork.cs" caret="260" fromTop="10" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:UnitOfWork.cs" caret="138" fromTop="6" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:UnitOfWork.cs" caret="1540" fromTop="15" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:UnitOfWork.cs" caret="1670" fromTop="14" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:UnitOfWork.cs" caret="1417" fromTop="4" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:UnitOfWork.cs" caret="392" fromTop="10" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:Admin/f:Index.cshtml" caret="104" fromTop="8" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:Admin/f:Index.cshtml" caret="95" fromTop="4" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:ViewModels/d:Admin/f:AdminViewModel.cs" caret="54" fromTop="0" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/f:Global.asax.cs" caret="2008" fromTop="14" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/f:Global.asax.cs" caret="0" fromTop="0" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:AdminController.cs" caret="1026" fromTop="19" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:Admin/f:Index.cshtml" caret="26" fromTop="0" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:AdminController.cs" caret="911" fromTop="15" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:ViewModels/d:Admin/f:AdminViewModel.cs" caret="159" fromTop="7" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:AdminController.cs" caret="582" fromTop="14" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:ViewModels/d:Admin/f:MilestoneViewModel.cs" caret="114" fromTop="6" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Entities/f:Milestone.cs" caret="102" fromTop="5" />
+  </RecentEdits>
+</RecentFiles>

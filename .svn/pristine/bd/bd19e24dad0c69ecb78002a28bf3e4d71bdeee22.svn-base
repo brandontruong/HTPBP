@@ -1,0 +1,7 @@
+﻿@model BP.ViewModels.Admin.AdminViewModel
+
+@{
+    Layout = null;
+    ViewBag.Title = "Admin";
+}
+

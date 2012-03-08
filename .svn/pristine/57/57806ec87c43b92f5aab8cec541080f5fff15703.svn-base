@@ -1,0 +1,18 @@
+﻿div.left 
+{
+    width: 20%;
+    float: left;
+    background: yellow;
+}
+
+div.left ul
+{
+    list-style-type: none;
+}
+
+div.right 
+{
+    width: 79%;
+    float: left;
+    background: red;
+}

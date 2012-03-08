@@ -1,0 +1,21 @@
+﻿@model BP.ViewModels.Admin.AdminViewModel
+
+@{
+    Layout = "~/Views/Shared/_BPAdminLayout.cshtml";
+
+    ViewBag.Title = "Admin";
+}
+
+<div>
+    <div class="left">
+        <ul>
+            @foreach(var item in Model.Milestones.OrderBy(m => m.DisplayOrder))
+            {
+                <li>@Html.ActionLink(item.Title, "Milestone", new { milestoneId= item.MilestoneId})</li>
+            }
+        </ul>
+    </div>
+    <div class="right">
+       
+    </div>
+</div>
