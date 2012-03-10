@@ -7,6 +7,7 @@ using AutoMapper;
 using BP.ViewModels;
 using BP.Domain.Entities;
 using BP.ViewModels.Admin;
+using BP.ViewModels.BikePlan;
 
 namespace BP
 {
@@ -28,6 +29,12 @@ namespace BP
                 name: "DefaultApi",
                 routeTemplate: "api/{controller}/{id}",
                 defaults: new { id = RouteParameter.Optional }
+            );
+
+            routes.MapRoute(
+                name: "BikePlan",
+                url: "bikeplan/milestone{milestoneOrder}/step{stepOrder}",
+                defaults: new { controller = "bikeplan", action = "milestone", milestoneOrder = "1", stepOrder ="1"}
             );
 
             routes.MapRoute(
@@ -62,6 +69,8 @@ namespace BP
             Mapper.CreateMap<RegisterViewModel, UserModel>();
             Mapper.CreateMap<Milestone, MilestoneViewModel>();
             Mapper.CreateMap<Step, StepViewModel>();
+            Mapper.CreateMap<Task, TaskViewModel>();
+            Mapper.CreateMap<TaskOutcome, TaskOutcomeViewModel>();
         }
     }
 }

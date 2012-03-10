@@ -1,0 +1,62 @@
+﻿@model BP.ViewModels.BikePlan.BikePlanViewModel
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_BPLayout.cshtml";
+}
+<div class="leftcolumn">
+    <ul>
+        @for (var i = 0; i < Model.Milestones.Count(); i++)
+        {
+            var milestone = Model.Milestones.ElementAt(i);
+            <li>@Html.ActionLink(milestone.Title, "Milestone", new { milestoneOrder = (i + 1) })
+                @if (milestone == Model.SelectedMilestone)
+                {
+                    <ul>
+                        @for (var j = 0; j < Model.Steps.Count(); j++)
+                        {
+                            var step = Model.Steps.ElementAt(j);
+                            <li>
+                                @(step.StepId == Model.SelectedStep.StepId
+           ? Html.ActionLink(step.Name, "Milestone", new { milestoneOrder = i + 1, stepOrder = j + 1 }, new { @class = "active" })
+           : Html.ActionLink(step.Name, "Milestone", new { milestoneOrder = i + 1, stepOrder = j + 1 }))
+                            </li>
+                        }
+                    </ul>
+                }
+            </li>
+        }
+    </ul>
+</div>
+
+<div class="rightcolumn">
+    @using (Html.BeginForm())
+    {
+        @Html.HiddenFor(m => m.SelectedStep.StepId)
+        <h1>@Model.SelectedStep.Name</h1>
+        <p>
+            Enter guidance and thinking points and upload resources for people to use</p>
+        <h2>
+            Guidance text</h2>
+        @Html.TextAreaFor(m => m.SelectedStep.Guidance)
+       
+        <h2>
+            Thinking point</h2>
+        <textarea id="thinkingpoint" name="thinkingpoint"></textarea>
+        <h2>
+            Resources</h2>
+        
+        <p style="text-align: right">
+            <input type="button" name="Cancel" value="Cancel" />
+            <input type="submit" name="Save" value="Save" />
+        </p>
+    }
+</div>
+
+<div class="centercolumn">
+    @Html.Raw(Model.SelectedStep.Guidance)
+    @for (var i = 0; i < Model.Tasks.Count(); i++)
+    {
+        <p>@Model.Tasks.ElementAt(i).Name</p>
+        @(Model.Outcomes.Any()? Html.TextArea("Outcomes[" + @i + "].Description", Model.Outcomes.ElementAt(i).Description) : Html.TextArea("Outcomes[" + @i + "].Description"))
+    }
+</div>

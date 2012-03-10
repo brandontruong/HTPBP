@@ -1,0 +1,50 @@
+﻿@model BP.ViewModels.BikePlan.BikePlanViewModel
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_BPAdminLayout.cshtml";
+}
+
+<div class="left">
+        <ul>
+            @foreach (var item in Model.Milestones.OrderBy(m => m.DisplayOrder))
+            {
+                <li>@Html.ActionLink(item.Title, "Milestone", new { milestoneId = item.MilestoneId })
+                @if (item == Model.SelectedMilestone)
+                {
+                    <ul>
+                        @foreach (var step in Model.Steps)
+                        {
+                            <li>
+                                @(step.StepId == Model.SelectedStep.StepId 
+                                ? Html.ActionLink(step.Name, "Milestone", new {milestoneId = item.MilestoneId, stepId = step.StepId}, new {@class = "active"}) 
+                                : Html.ActionLink(step.Name, "Milestone", new {milestoneId = item.MilestoneId, stepId = step.StepId}))
+                                
+                            </li>
+                        }
+                    </ul>
+                }
+                </li>
+            }
+        </ul>
+    </div>
+    <div class="right">
+           @using (Html.BeginForm())
+           {
+               @Html.HiddenFor(m => m.SelectedStep.StepId)
+               <h1>@Model.SelectedStep.Name</h1>
+                <p>Enter guidance and thinking points and upload resources for people to use</p>
+                <h2>Guidance text</h2>
+                @Html.TextAreaFor(m => m.SelectedStep.Guidance)
+       
+                <h2>Thinking point</h2>
+                <textarea id="thinkingpoint" name="thinkingpoint"></textarea>
+                <h2>Resources</h2>
+        
+                <p style="text-align: right">
+                    <input type="button" name="Cancel" value="Cancel"/>
+                    <input type="submit" name="Save" value="Save" />
+                </p>
+           }
+        
+    </div>

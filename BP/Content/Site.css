@@ -86,7 +86,7 @@ h5, h6 {
 ----------------------------------------------------------*/
 .content-wrapper {
     margin: 0 auto;
-    max-width: 960px;
+    /*max-width: 960px;*/
 }
 
 #body {
@@ -99,6 +99,7 @@ h5, h6 {
         background: url("../Images/accent.png") no-repeat;
         padding-left: 10px;
         padding-top: 30px;
+        
     }
 
     .featured + .main-content {

@@ -1,4 +1,5 @@
 ﻿using System.Web.Profile;
+using System;
 
 namespace BP.Infrastructure
 {
@@ -37,6 +38,15 @@ namespace BP.Infrastructure
                 return ((string)base["Organization"]);
             }
             set { base["Organization"] = value; Save();}
+        }
+
+        public Guid BikePlanApplicationId
+        {
+            get
+            {
+                return ((Guid)base["BikePlanApplicationId"]);
+            }
+            set { base["BikePlanApplicationId"] = value; Save(); }
         }
 
         public static CustomProfile GetProfile(string username)

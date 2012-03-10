@@ -60,10 +60,11 @@ namespace BP.Controllers
                         profile.GivenName = userProfile.GivenName;
                         profile.Role = role[0];
                         profile.Organization = _unitOfWork.Organizations.GetById(userProfile.OrganizationId).Name;
+                        var bikePlanApplication = _unitOfWork.BikePlanApplications.Get(b => b.OrganizationId == userProfile.OrganizationId).FirstOrDefault();
+                        if (bikePlanApplication != null) profile.BikePlanApplicationId = bikePlanApplication.BikePlanApplicationId;
+                        
                     }
            
-
-
                     if (role.Contains(RoleTypes.Admin))
                     {
                         var urlReferrer = (HttpContext.Request).UrlReferrer;
@@ -74,7 +75,7 @@ namespace BP.Controllers
                     {
                         var urlReferrer = (HttpContext.Request).UrlReferrer;
                         if (urlReferrer != null)
-                            returnUrl = string.Format("{0}teamleader", urlReferrer.AbsoluteUri);
+                            returnUrl = string.Format("{0}bikeplan", urlReferrer.AbsoluteUri);
                     }
                     else if (role.Contains(RoleTypes.TeamMember))
                     {
@@ -188,17 +189,18 @@ namespace BP.Controllers
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
+                    
                     //Send confirmation email
                     try {
                         WebMail.SmtpServer = "smtp.gmail.com";
-                    WebMail.SmtpPort = 587;
-                    WebMail.EnableSsl = true;
-                    WebMail.UserName = "admin@simpleit.somee.com";
-                    WebMail.Password = "Eoo62oo8";
-                    WebMail.From = "admin@simpleit.somee.com";
+                        WebMail.SmtpPort = 587;
+                        WebMail.EnableSsl = true;
+                        WebMail.UserName = "admin@simpleit.somee.com";
+                        WebMail.Password = "Eoo62oo8";
+                        WebMail.From = "admin@simpleit.somee.com";
 
-                    WebMail.Send(model.Email, "Registration Confirmation",
-                        "Hi " + model.FamilyName + ", you are now member of the HTPBP online application.");
+                        WebMail.Send(model.Email, "Registration Confirmation",
+                            "Hi " + model.FamilyName + ", you are now member of the HTPBP online application.");
             
                     } catch (Exception) {
                         //@:<b>Sorry - we couldn't send the email to confirm your RSVP.</b> 
