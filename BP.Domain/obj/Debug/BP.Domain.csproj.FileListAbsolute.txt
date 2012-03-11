@@ -20,3 +20,14 @@ C:\Users\brandon\Documents\Visual Studio 2010\Projects\BP\BP.Domain\bin\Debug\Ni
 C:\Users\brandon\Documents\Visual Studio 2010\Projects\BP\BP.Domain\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\brandon\Documents\Visual Studio 2010\Projects\BP\BP.Domain\obj\Debug\BP.Domain.dll
 C:\Users\brandon\Documents\Visual Studio 2010\Projects\BP\BP.Domain\obj\Debug\BP.Domain.pdb
+C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Domain\bin\Debug\BP.Domain.dll
+C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Domain\bin\Debug\BP.Domain.pdb
+C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Domain\bin\Debug\Moq.dll
+C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Domain\bin\Debug\Ninject.dll
+C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Domain\bin\Debug\Moq.pdb
+C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Domain\bin\Debug\Moq.xml
+C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Domain\bin\Debug\Ninject.pdb
+C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Domain\bin\Debug\Ninject.xml
+C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Domain\obj\Debug\ResolveAssemblyReference.cache
+C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Domain\obj\Debug\BP.Domain.dll
+C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Domain\obj\Debug\BP.Domain.pdb

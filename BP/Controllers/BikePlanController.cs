@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Web.Mvc;
 using AutoMapper;
@@ -91,8 +92,17 @@ namespace BP.Controllers
                 _unitOfWork.Tasks.Get(t => t.StepId == viewModel.SelectedStep.StepId).OrderBy(t => t.DisplayOrder));
 
             var profile = CustomProfile.GetProfile(Profile.UserName);
-            viewModel.Outcomes = Mapper.Map<IEnumerable<TaskOutcome>, IEnumerable<TaskOutcomeViewModel>>(_unitOfWork.TaskOutcomes.Get(t => t.BikePlanApplicationId == profile.BikePlanApplicationId));
+            viewModel.Outcomes = Mapper.Map<IList<TaskOutcome>, IList<TaskOutcomeViewModel>>(_unitOfWork.TaskOutcomes.Get(t => t.BikePlanApplicationId == profile.BikePlanApplicationId).ToList());
             
+            if (!viewModel.Outcomes.Any())
+            {
+                viewModel.Outcomes = new List<TaskOutcomeViewModel>();
+                for (int i = 0; i < viewModel.Tasks.Count(); i++)
+                {
+                    viewModel.Outcomes.Add(new TaskOutcomeViewModel());
+                }
+                
+            }
             return View(viewModel);
 
         }

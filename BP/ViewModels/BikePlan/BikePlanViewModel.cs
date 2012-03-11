@@ -13,6 +13,6 @@ namespace BP.ViewModels.BikePlan
         public StepViewModel SelectedStep { get; set; }
         public IEnumerable<TaskViewModel> Tasks { get; set; }
 
-        public IEnumerable<TaskOutcomeViewModel> Outcomes { get; set; }
+        public IList<TaskOutcomeViewModel> Outcomes { get; set; }
     }
 }
