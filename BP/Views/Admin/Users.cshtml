@@ -1,0 +1,68 @@
+﻿@model IEnumerable<BP.Domain.Entities.UserModel>
+
+@{
+    ViewBag.Title = "Users";
+    Layout = "~/Views/Shared/_BPAdminLayout.cshtml";
+}
+
+<h2>Users</h2>
+<h3>@ViewBag.Error</h3>
+<p>
+    @Html.ActionLink("Create New", "Register")
+</p>
+<table>
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.GivenName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.FamilyName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Email)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Phone)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Role)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.OrganizationName)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+
+        <td>
+            @Html.DisplayFor(modelItem => item.GivenName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.FamilyName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Email)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Role)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.OrganizationName)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |
+            @Html.ActionLink("Delete", "DeleteUser", new { id = item.UserId })
+            
+            @Html.HiddenFor(modelItem => item.UserId)
+            @Html.HiddenFor(modelItem => item.OrganizationId)
+        </td>
+    </tr>
+}
+
+</table>

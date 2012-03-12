@@ -41,6 +41,15 @@
       <Private>True</Private>
       <HintPath>..\packages\EntityFramework.4.1.10331.0\lib\net40\EntityFramework.dll</HintPath>
     </Reference>
+    <Reference Include="itextsharp">
+      <HintPath>packages\iTextSharp.5.2.0\lib\itextsharp.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xmlworker">
+      <HintPath>packages\iTextSharp.5.2.0\lib\itextsharp.xmlworker.dll</HintPath>
+    </Reference>
+    <Reference Include="itextsharp.xtra">
+      <HintPath>packages\iTextSharp.5.2.0\lib\itextsharp.xtra.dll</HintPath>
+    </Reference>
     <Reference Include="Microsoft.CSharp" />
     <Reference Include="Microsoft.Web.Infrastructure, Version=1.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <Private>True</Private>
@@ -134,6 +143,7 @@
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\AdminController.cs" />
     <Compile Include="Controllers\BikePlanController.cs" />
+    <Compile Include="Controllers\BinaryContentResult.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MilestoneController.cs" />
     <Compile Include="Controllers\MyNinjectModules.cs" />
@@ -142,9 +152,12 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Infrastructure\iMvcPdf\ControllerExtensions.cs" />
     <Compile Include="Infrastructure\CustomMembershipProvider.cs" />
     <Compile Include="Infrastructure\CustomProfile.cs" />
+    <Compile Include="Infrastructure\iMvcPdf\PdfResult.cs" />
     <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
+    <Compile Include="Infrastructure\iMvcPdf\PdfFromHtmlResult.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="ViewModels\Admin\AdminViewModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -502,6 +515,9 @@
     <Content Include="Views\BikePlan\Milestone.cshtml" />
     <Content Include="Views\Shared\_BPLayout.cshtml" />
     <Content Include="Views\Shared\EditorTemplates\tinymce_jquery_full.cshtml" />
+    <Content Include="Views\Home\Milestone.cshtml" />
+    <Content Include="Views\BikePlan\PDFView.cshtml" />
+    <Content Include="Views\Admin\Users.cshtml" />
     <None Include="_bin_deployableAssemblies\System.Web.Mvc.dll" />
     <None Include="_bin_deployableAssemblies\System.Web.Http.WebHost.dll" />
     <None Include="_bin_deployableAssemblies\System.Web.Http.SelfHost.dll" />
@@ -517,6 +533,7 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
+    <Folder Include="pdf\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="packages.config" />

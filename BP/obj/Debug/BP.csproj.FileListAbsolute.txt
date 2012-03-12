@@ -158,3 +158,6 @@ C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin
 C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\obj\Debug\BP.dll
 C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\obj\Debug\BP.pdb
+C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin\itextsharp.dll
+C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin\itextsharp.xmlworker.dll
+C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin\itextsharp.xtra.dll

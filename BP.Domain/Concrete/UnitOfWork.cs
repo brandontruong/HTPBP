@@ -15,6 +15,7 @@ namespace BP.Domain.Concrete
         private IRepository<Task> _tasks;
         private IRepository<BikePlanApplication> _bikePlanApplications;
         private IRepository<TaskOutcome> _taskOutcomes;
+        private IRepository<vw_UserDetails> _vwUserDetails;
         
         private IRepository<UserProfile> _userProfile;
 
@@ -119,6 +120,16 @@ namespace BP.Domain.Concrete
             {
                 return _taskOutcomes ??
                    (_taskOutcomes = new GenericRepository<TaskOutcome>(_context));
+            }
+        }
+
+
+        public IRepository<vw_UserDetails> VwUserDetails
+        {
+            get
+            {
+                return _vwUserDetails ??
+                   (_vwUserDetails = new GenericRepository<vw_UserDetails>(_context));
             }
         }
     }

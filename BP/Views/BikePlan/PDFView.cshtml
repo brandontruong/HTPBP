@@ -1,0 +1,18 @@
+﻿@model BP.ViewModels.BikePlan.BikePlanViewModel
+@{
+    ViewBag.Title = "PDFView";
+    Layout = null;
+}
+
+    @using (Html.BeginForm())
+    {
+        <p><strong>@Model.SelectedStep.Name</strong></p>
+        <p>@Html.Raw(Model.SelectedStep.Guidance)</p> <br />
+        for (var i = 0; i < Model.Tasks.Count(); i++)
+        {
+            <div><strong>@Model.Tasks.ElementAt(i).Name</strong></div>
+           
+            @Html.Raw(Model.Outcomes.ElementAt(i).Description)<br />
+            
+        }
+    }

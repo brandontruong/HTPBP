@@ -14,5 +14,8 @@ namespace BP.ViewModels.BikePlan
         public IEnumerable<TaskViewModel> Tasks { get; set; }
 
         public IList<TaskOutcomeViewModel> Outcomes { get; set; }
+
+        public string MilestoneOrder { get; set; }
+        public string StepOrder { get; set; }
     }
 }

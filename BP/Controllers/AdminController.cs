@@ -75,5 +75,18 @@ namespace BP.Controllers
             _unitOfWork.Commit();
             return View(viewModel);
         }
+
+        public ActionResult Users(string error)
+        {
+            ViewBag.Error = error;
+            var users = _unitOfWork.Accounts.GetUsers();
+            return View(users);
+        }
+
+        public ActionResult DeleteUser(Guid id)
+        {
+            string error;
+            return _unitOfWork.Accounts.DeleteUser(id, out error ) ? RedirectToAction("Users") : RedirectToAction("Users", new { Error = error });
+        }
     }
 }

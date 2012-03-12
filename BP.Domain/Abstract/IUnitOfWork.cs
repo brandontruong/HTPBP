@@ -14,6 +14,7 @@ namespace BP.Domain.Abstract
         IRepository<UserProfile> UserProfiles { get; }
         IRepository<BikePlanApplication> BikePlanApplications { get; }
         IRepository<TaskOutcome> TaskOutcomes { get; }
+        IRepository<vw_UserDetails> VwUserDetails { get; }
         IAccountRepository Accounts { get; }
         
         void Commit();

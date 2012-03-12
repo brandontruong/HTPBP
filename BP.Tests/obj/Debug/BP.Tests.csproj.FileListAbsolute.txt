@@ -118,3 +118,4 @@ C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Tes
 C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Tests\obj\Debug\ResolveAssemblyReference.cache
 C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Tests\obj\Debug\BP.Tests.dll
 C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Tests\obj\Debug\BP.Tests.pdb
+C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Tests\bin\Debug\itextsharp.dll

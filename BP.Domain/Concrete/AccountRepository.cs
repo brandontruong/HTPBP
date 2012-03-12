@@ -92,5 +92,47 @@ namespace BP.Domain.Concrete
             }
             return null;
         }
+
+
+        public IEnumerable<UserModel> GetUsers()
+        {
+
+            var user = from u in _context.Vw_UserDetails
+                       select new UserModel
+                                  {
+                                      UserId = u.UserId,
+                                      Email = u.Email,
+                                      Password = u.Password,
+                                      FamilyName = u.FamilyName,
+                                      GivenName = u.GivenName,
+                                      Phone = u.Phone,
+                                      Role = u.RoleName,
+                                      OrganizationId = u.OrganizationId,
+                                      OrganizationName = u.OrganizationName,
+                                  };
+            return user;
+
+        }
+
+
+        public bool DeleteUser(Guid id, out string error)
+        {
+            error = string.Empty;
+            try
+            {
+                var entityToDelete = _context.Users.FirstOrDefault(u => u.UserId == id);
+                if (entityToDelete != null)
+                {
+                    _context.Users.Remove(entityToDelete);
+                    _context.SaveChanges();
+                }
+                return true;
+            }
+            catch (Exception ex)
+            {
+                error = ((ex.InnerException).InnerException).Message;
+                return false;
+            }
+        }
     }
 }

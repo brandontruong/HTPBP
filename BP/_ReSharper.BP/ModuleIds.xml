@@ -5,4 +5,5 @@
   <Module PersistentId="System.Web, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" ModuleId="System.Web" />
   <Module PersistentId="EEDDF3F2-C072-4F32-8E45-E2BEDDBF3D78" ModuleId="BP.Tests" />
   <Module PersistentId="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35" ModuleId="System.Web.Mvc" />
+  <Module PersistentId="itextsharp.xmlworker, Version=1.1.1.0, Culture=neutral, PublicKeyToken=8354ae6d2174ddca" ModuleId="itextsharp.xmlworker" />
 </Modules>

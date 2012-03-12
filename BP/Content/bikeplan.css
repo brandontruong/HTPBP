@@ -57,8 +57,8 @@ div.rightcolumn
 
 div.centercolumn {
     position: relative;
-    margin-left: 310px;
-    margin-right: 310px;
-    padding: 20px;
-    background: violet;
+    margin-left: 340px;
+    margin-right: 280px;
+    padding: 0px;
+    
 }

@@ -24,6 +24,7 @@ namespace BP.Domain.Entities
         public string Role { get; set; }
 
         public Guid OrganizationId { get; set; }
+        public string OrganizationName { get; set; }
 
     }
 }
