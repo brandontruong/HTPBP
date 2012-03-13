@@ -67,6 +67,7 @@ namespace BP
         private void SetupMapping()
         {
             Mapper.CreateMap<RegisterViewModel, UserModel>();
+            Mapper.CreateMap<UserModel, RegisterViewModel>();
             Mapper.CreateMap<Milestone, MilestoneViewModel>();
             Mapper.CreateMap<Step, StepViewModel>();
             Mapper.CreateMap<Task, TaskViewModel>();

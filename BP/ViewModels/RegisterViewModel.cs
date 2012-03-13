@@ -7,6 +7,9 @@ namespace BP.ViewModels
    
     public class RegisterViewModel
     {
+        [Display(Name = "Organization name")]
+        public string OrganizationName { get; set; }
+
         [Required]
         [Display(Name = "Given name")]
         public string GivenName { get; set; }
@@ -43,5 +46,8 @@ namespace BP.ViewModels
         [DataType(DataType.Text)]
         [Display(Name = "Organization")]
         public Guid OrganizationId { get; set; }
+
+        [HiddenInput]
+        public Guid UserId { get; set; }
     }
 }

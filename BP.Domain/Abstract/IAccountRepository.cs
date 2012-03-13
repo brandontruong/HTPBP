@@ -13,5 +13,7 @@ namespace BP.Domain.Abstract
         UserProfile GetUserProfileByUserName(string username);
 
         bool DeleteUser(Guid id, out string error);
+
+        bool UpdateUser(UserModel userModel, out string error);
     }
 }

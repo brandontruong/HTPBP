@@ -134,5 +134,43 @@ namespace BP.Domain.Concrete
                 return false;
             }
         }
+
+
+        public bool UpdateUser(UserModel userModel, out string error)
+        {
+            error = string.Empty;
+            try
+            {
+                var entityToUpdate = _context.Users.FirstOrDefault(u => u.UserId == userModel.UserId);
+                var userProfile = _context.UserProfiles.FirstOrDefault(u => u.UserId == userModel.UserId);
+                if (entityToUpdate != null)
+                {
+                    var user = Membership.GetUser(entityToUpdate.UserName);
+                    if (user != null)
+                    {
+                        user.Email = userModel.Email;
+                        Membership.UpdateUser(user);
+                    }
+
+                    entityToUpdate.UserName = userModel.Email;
+                }
+                if (userProfile != null)
+                {
+                    userProfile.Phone = userModel.Phone;
+                    userProfile.FamilyName = userModel.FamilyName;
+                    userProfile.GivenName = userModel.GivenName;
+                    userProfile.OrganizationId = userModel.OrganizationId;
+                }
+
+                _context.SaveChanges();
+
+                return true;
+            }
+            catch (Exception ex)
+            {
+                error = ((ex.InnerException).InnerException).Message;
+                return false;
+            }
+        }
     }
 }

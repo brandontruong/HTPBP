@@ -1,0 +1,102 @@
+﻿@model BP.ViewModels.RegisterViewModel
+
+@{
+    ViewBag.Title = "EditUser";
+    Layout = "~/Views/Shared/_BPAdminLayout.cshtml";
+}
+
+<h2>EditUser</h2>
+
+@Content.Script("jquery.validate.min.js", Url)
+@Content.Script("jquery.validate.unobtrusive.min.js", Url)
+@Content.Script("jquery.ui.combobox.js", Url)
+
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    @Html.HiddenFor(model => model.UserId)
+
+    <fieldset>
+        <legend>UserModel</legend>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GivenName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GivenName)
+            @Html.ValidationMessageFor(model => model.GivenName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FamilyName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FamilyName)
+            @Html.ValidationMessageFor(model => model.FamilyName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        @*<div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ConfirmPassword)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ConfirmPassword)
+            @Html.ValidationMessageFor(model => model.ConfirmPassword)
+        </div>*@
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phone)
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Role)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(m => m.Role, new SelectList(Roles.GetAllRoles(), Model.Role))
+            @Html.ValidationMessageFor(model => model.Role)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OrganizationName)
+        </div>
+        <div class="editor-field">
+            
+            @Html.DropDownListFor(m => m.OrganizationId, new SelectList(ViewBag.Organizations, "OrganizationId", "Name", Model.OrganizationId))
+            @Html.ValidationMessageFor(model => model.OrganizationName)
+        </div>
+
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+        
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Users")
+</div>
+
+<script type="text/javascript">
+    $(function () {
+        $('#OrganizationId').combobox();
+    })
+</script>

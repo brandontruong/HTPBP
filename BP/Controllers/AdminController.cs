@@ -2,11 +2,12 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Web.Mvc;
+using System.Web.Security;
 using AutoMapper;
 using BP.Domain.Abstract;
 using BP.Domain.Entities;
-using BP.Helpers;
 using BP.Infrastructure;
+using BP.ViewModels;
 using BP.ViewModels.Admin;
 
 namespace BP.Controllers
@@ -87,6 +88,41 @@ namespace BP.Controllers
         {
             string error;
             return _unitOfWork.Accounts.DeleteUser(id, out error ) ? RedirectToAction("Users") : RedirectToAction("Users", new { Error = error });
+        }
+
+        public ActionResult EditUser(Guid id)
+        {
+            var entityToEdit = _unitOfWork.Accounts.GetUsers().FirstOrDefault(u => u.UserId == id);
+            var viewModel = Mapper.Map<UserModel, RegisterViewModel>(entityToEdit);
+            ViewBag.Organizations = _unitOfWork.Organizations.Get();
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        public ActionResult EditUser(RegisterViewModel viewModel)
+        {
+            // Dont care about password for now
+            ModelState.Remove("Password");
+            
+            if (ModelState.IsValid)
+            {
+                string error;
+                if (_unitOfWork.Accounts.UpdateUser(Mapper.Map<RegisterViewModel, UserModel>(viewModel), out error))
+                {
+                    return RedirectToAction("Users");
+                }
+
+                ModelState.AddModelError("", error);
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(viewModel);
+        }
+
+        public JsonResult GetOrganizations(string term)
+        {
+            var organizations = _unitOfWork.Organizations.Get(o => o.Name.Contains(term)).Select(o => new {label = o.Name, value = o.OrganizationId});
+            return Json(organizations, JsonRequestBehavior.AllowGet);
         }
     }
 }
