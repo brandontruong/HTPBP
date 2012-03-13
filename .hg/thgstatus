@@ -4,10 +4,5 @@ m.git/logs/refs/heads
 m.git/logs/refs/remotes/origin
 m.git/refs/heads
 m.git/refs/remotes/origin
-mBP
-mBP.Domain/bin/Debug
 mBP.Domain/obj/Debug
-mBP.Tests/bin/Debug
-mBP.Tests/obj/Debug
 rBP/bin
-mBP/obj/Debug
