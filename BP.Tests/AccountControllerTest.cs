@@ -82,24 +82,24 @@ namespace BP.Tests
         // TODO: Ensure that the UrlToTest attribute specifies a URL to an ASP.NET page (for example,
         // http://.../Default.aspx). This is necessary for the unit test to be executed on the web server,
         // whether you are testing a page, web service, or a WCF service.
-        [TestMethod()]
-        public void RegisterTest()
-        {
-            Mapper.CreateMap<RegisterViewModel, User>();
+        //[TestMethod()]
+        //public void RegisterTest()
+        //{
+        //    Mapper.CreateMap<RegisterViewModel, User>();
            
 
-            var mockAccount = new Mock<IAccountRepository>();
+        //    var mockAccount = new Mock<IAccountRepository>();
            
-            var mock = new Mock<IUnitOfWork>();
-            mock.Setup(m => m.Accounts).Returns(mockAccount.Object);
+        //    var mock = new Mock<IUnitOfWork>();
+        //    mock.Setup(m => m.Accounts).Returns(mockAccount.Object);
 
         
-            var target = new AccountController(mock.Object); 
-            var model = new RegisterViewModel(); // TODO: Initialize to an appropriate value
+        //    var target = new AccountController(mock.Object); 
+        //    var model = new RegisterViewModel(); // TODO: Initialize to an appropriate value
          
-            ActionResult actual = target.Register(model);
-            Assert.IsInstanceOfType(actual, typeof(RedirectToRouteResult));
-        }
+        //    ActionResult actual = target.Register(model);
+        //    Assert.IsInstanceOfType(actual, typeof(RedirectToRouteResult));
+        //}
 
         [TestMethod()]
         public void LoginTest()

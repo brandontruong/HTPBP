@@ -1,0 +1,53 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<TestRun id="4ff07f1a-64ee-4fa2-9c0a-67423813a623" name="brandon@BRANDON-MACBOOK 2012-03-14 21:50:32" runUser="BRANDON-MACBOOK\brandon" xmlns="http://microsoft.com/schemas/VisualStudio/TeamTest/2010">
+  <TestSettings name="Default Test Settings" id="c62ae0e2-fc72-4dda-b18f-98b350c4599d">
+    <Deployment runDeploymentRoot="brandon_BRANDON-MACBOOK 2012-03-14 21_50_32">
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\System.Web.WebPages.Razor.dll" />
+      <DeploymentItem filename="C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Tests\bin\Debug\System.Web.Optimization.dll" />
+      <DeploymentItem filename="C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Tests\bin\Debug\Ninject.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\System.Web.WebPages.Deployment.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Net.Http.Formatting.dll" />
+      <DeploymentItem filename="C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Domain\bin\Debug\BP.Domain.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\System.Web.Helpers.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Web.Http.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\System.Web.WebPages.dll" />
+      <DeploymentItem filename="C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin\System.Web.Providers.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Web.Http.WebHost.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Net.Http.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\Microsoft.Web.Infrastructure.dll" />
+      <DeploymentItem filename="C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\packages\Moq.4.0.10827\lib\NET40\Moq.dll" />
+      <DeploymentItem filename="C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin\BP.dll" />
+      <DeploymentItem filename="C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP.Tests\bin\Debug\AutoMapper.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET Web Pages\v2.0\Assemblies\System.Web.Razor.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Json.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Web.Http.Common.dll" />
+      <DeploymentItem filename="C:\Program Files (x86)\Microsoft ASP.NET\ASP.NET MVC 4\Assemblies\System.Net.Http.WebRequest.dll" />
+    </Deployment>
+    <Execution>
+      <TestTypeSpecific />
+      <AgentRule name="Execution Agents">
+      </AgentRule>
+    </Execution>
+  </TestSettings>
+  <Times creation="2012-03-14T21:50:32.9718912+11:00" queuing="2012-03-14T21:50:34.1649595+11:00" start="2012-03-14T21:50:34.2269630+11:00" finish="2012-03-14T21:50:34.6529874+11:00" />
+  <ResultSummary outcome="Completed">
+    <Counters total="1" executed="1" passed="1" error="0" failed="0" timeout="0" aborted="0" inconclusive="0" passedButRunAborted="0" notRunnable="0" notExecuted="0" disconnected="0" warning="0" completed="0" inProgress="0" pending="0" />
+  </ResultSummary>
+  <TestDefinitions>
+    <UnitTest name="IsValidLoginTest" storage="c:\users\brandon\documents\visual studio 2010\projects\bikeplan\htpbp.git\bp.tests\bin\debug\bp.tests.dll" id="b8801b29-4153-1868-2223-0e52a256beac">
+      <Execution id="80c65aef-f77d-4703-83a9-abfcb1bdfd3c" />
+      <TestMethod codeBase="C:/Users/brandon/Documents/Visual Studio 2010/Projects/BikePlan/HTPBP.git/BP.Tests/bin/Debug/BP.Tests.DLL" adapterTypeName="Microsoft.VisualStudio.TestTools.TestTypes.Unit.UnitTestAdapter, Microsoft.VisualStudio.QualityTools.Tips.UnitTest.Adapter, Version=10.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" className="BP.Tests.AccountRepositoryTest, BP.Tests, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null" name="IsValidLoginTest" />
+    </UnitTest>
+  </TestDefinitions>
+  <TestLists>
+    <TestList name="Results Not in a List" id="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+    <TestList name="All Loaded Results" id="19431567-8539-422a-85d7-44ee4e166bda" />
+  </TestLists>
+  <TestEntries>
+    <TestEntry testId="b8801b29-4153-1868-2223-0e52a256beac" executionId="80c65aef-f77d-4703-83a9-abfcb1bdfd3c" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" />
+  </TestEntries>
+  <Results>
+    <UnitTestResult executionId="80c65aef-f77d-4703-83a9-abfcb1bdfd3c" testId="b8801b29-4153-1868-2223-0e52a256beac" testName="IsValidLoginTest" computerName="BRANDON-MACBOOK" duration="00:00:00.0134000" startTime="2012-03-14T21:50:34.2509644+11:00" endTime="2012-03-14T21:50:34.6239857+11:00" testType="13cdc9d9-ddb5-4fa4-a97d-d965ccfc6d4b" outcome="Passed" testListId="8c84fa94-04c1-424b-9868-57a2d4851a1d" relativeResultsDirectory="80c65aef-f77d-4703-83a9-abfcb1bdfd3c">
+    </UnitTestResult>
+  </Results>
+</TestRun>
