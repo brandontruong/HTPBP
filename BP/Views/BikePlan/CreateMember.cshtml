@@ -1,0 +1,103 @@
+﻿@using BP.Domain.Helpers
+@using BP.Helpers
+@model BP.ViewModels.RegisterViewModel
+
+@{
+    ViewBag.Title = "CreateMember";
+    Layout = "~/Views/Shared/_BPLayout.cshtml";
+}
+
+<h2>Create Member</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>RegisterViewModel</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GivenName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GivenName)
+            @Html.ValidationMessageFor(model => model.GivenName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FamilyName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FamilyName)
+            @Html.ValidationMessageFor(model => model.FamilyName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Password)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Password)
+            @Html.ValidationMessageFor(model => model.Password)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.ConfirmPassword)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.ConfirmPassword)
+            @Html.ValidationMessageFor(model => model.ConfirmPassword)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phone)
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Role)
+        </div>
+        <div class="editor-field">
+            @*@Html.EditorFor(model => model.Role)*@
+            @Html.DropDownListFor(model => model.Role, new[]
+                                                     {
+                                                         new SelectListItem(){Text = RoleTypes.Approver}, 
+                                                         new SelectListItem(){Text = RoleTypes.Author}, 
+                                                     }, "choose a role")
+            @Html.ValidationMessageFor(model => model.Role)
+        </div>
+        
+        <div class="editor-label">
+            Granted permission to milestone
+        </div>
+        <div class="editor-field">
+            @*@Html.EditorFor(model => model.Role)*@
+            @Html.DropDownListFor(model => model.Role, new[]
+                                                     {
+                                                         new SelectListItem(){Text = RoleTypes.Approver}, 
+                                                         new SelectListItem(){Text = RoleTypes.Author}, 
+                                                     }, "choose a role")
+            @Html.ValidationMessageFor(model => model.Role)
+        </div>
+
+        <p>
+            <input type="submit" value="Create" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Index")
+</div>
