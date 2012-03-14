@@ -11,7 +11,12 @@
  * Copyright 2011, AUTHORS.txt (http://jqueryui.com/about)
  * http://docs.jquery.com/UI/Autocomplete#theming
  */
-.ui-autocomplete { position: absolute; cursor: default; }	
+.ui-autocomplete {
+     position: absolute; cursor: default;
+     max-height: 100px;
+     overflow-x: hidden;
+     overflow-y: auto;
+}	
 
 /* workarounds */
 * html .ui-autocomplete { width:1px; } /* without this, the menu expands to 100% in IE6 */
@@ -36,7 +41,7 @@
 	margin: 0;
 	display:block;
 	float: left;
-    background: gray;
+    
 }
 .ui-menu .ui-menu {
 	margin-top: -3px;

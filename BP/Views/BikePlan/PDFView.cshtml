@@ -12,7 +12,9 @@
         {
             <div><strong>@Model.Tasks.ElementAt(i).Name</strong></div>
            
-            @Html.Raw(Model.Outcomes.ElementAt(i).Description)<br />
-            
+            if (Model.Outcomes.Count > 0)
+            {
+                @Html.Raw(Model.Outcomes.ElementAt(i).Description)<br />
+            }
         }
     }

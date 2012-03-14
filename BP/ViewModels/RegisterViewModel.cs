@@ -38,7 +38,6 @@ namespace BP.ViewModels
         [Display(Name = "Phone")]
         public string Phone { get; set; }
 
-
         [DataType(DataType.Text)]
         [Display(Name = "Role")]
         public string Role { get; set; }

@@ -6,7 +6,8 @@
         <title>@ViewBag.Title</title>
         <link href="@Url.Content("~/Content/Site.css")" rel="stylesheet" type="text/css" />
         <link href="@Url.Content("~/Content/admin.css")" rel="stylesheet" type="text/css" />
-        <link href="@Url.Content("~/Content/themes/base/jquery.ui.autocomplete.css")" rel="stylesheet" type="text/css" />
+        <link href="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Content/themes/base/css")" rel="stylesheet" type="text/css" />
+
         <script src="@System.Web.Optimization.BundleTable.Bundles.ResolveBundleUrl("~/Scripts/js")"></script>
         @RenderSection("Header", required: false)
     </head>

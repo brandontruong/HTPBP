@@ -1,14 +1,17 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
 using System.Web.Mvc;
+using System.Web.Security;
 using AutoMapper;
 using BP.Domain.Abstract;
 using BP.Domain.Entities;
 using BP.Helpers;
 using BP.Infrastructure;
 using BP.Infrastructure.iMvcPdf;
+using BP.ViewModels;
 using BP.ViewModels.Admin;
 using BP.ViewModels.BikePlan;
 using System.Text;
@@ -235,5 +238,61 @@ namespace BP.Controllers
         //    // Send the binary data to the browser.
         //    return new BinaryContentResult(buf, "application/pdf");
         //}
+        public ActionResult Team()
+        {
+            var profile = CustomProfile.GetProfile(Profile.UserName);
+            var users = _unitOfWork.Accounts.GetUsers().Where(u => u.OrganizationId == profile.OrganizationId);
+
+            return View(users);
+        }
+
+        public ActionResult CreateMember()
+        {
+            ViewBag.Milestones = _unitOfWork.Milestones.Get().OrderBy(m => m.DisplayOrder);
+            return View();
+        }
+
+        [HttpPost]
+        public ActionResult CreateMember(RegisterViewModel viewModel)
+        {
+             if (ModelState.IsValid)
+            {
+               // Attempt to register the user
+                string error;
+                var profile = CustomProfile.GetProfile(Profile.UserName);
+                viewModel.OrganizationName = profile.Organization;
+                viewModel.OrganizationId = profile.OrganizationId;
+                var createStatus = _unitOfWork.Accounts.CreateUser(Mapper.Map<RegisterViewModel, UserModel>(viewModel), out error);
+
+                if (createStatus == MembershipCreateStatus.Success)
+                {
+                    //LoadProfile(model.Email);
+
+                    //Send confirmation email
+                    //try {
+                    //    WebMail.SmtpServer = "smtp.gmail.com";
+                    //    WebMail.SmtpPort = 587;
+                    //    WebMail.EnableSsl = true;
+                    //    WebMail.UserName = "admin@simpleit.somee.com";
+                    //    WebMail.Password = "Eoo62oo8";
+                    //    WebMail.From = "admin@simpleit.somee.com";
+
+                    //    WebMail.Send(model.Email, "Registration Confirmation",
+                    //        "Hi " + model.FamilyName + ", you are now member of the HTPBP online application.");
+            
+                    //} catch (Exception) {
+                    //    //@:<b>Sorry - we couldn't send the email to confirm your RSVP.</b> 
+                    //}
+
+                    return RedirectToAction("Team");
+                }
+
+                ModelState.AddModelError("", String.IsNullOrEmpty(error)? Helper.ErrorCodeToString(createStatus): error);
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(viewModel);
+
+        }
     }
 }

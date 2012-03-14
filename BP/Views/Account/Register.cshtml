@@ -13,16 +13,17 @@
     Passwords are required to be a minimum of @Membership.MinRequiredPasswordLength characters in length.
 </p>
 
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+@Content.Script("jquery.validate.min.js", Url)
+@Content.Script("jquery.validate.unobtrusive.min.js", Url)
+@Content.Script("jquery.ui.combobox.js", Url)
 
 @using (Html.BeginForm((string)ViewBag.FormAction, "Account")) {
     @Html.ValidationSummary(true, "Account creation was unsuccessful. Please correct the errors and try again.")
-
+    
     <fieldset>
         <legend>Registration Form</legend>
         <ol>
-             <li>
+            <li>
                 @Html.LabelFor(m => m.GivenName)
                 @Html.TextBoxFor(m => m.GivenName)
                 @Html.ValidationMessageFor(m => m.GivenName)
@@ -47,7 +48,61 @@
                 @Html.PasswordFor(m => m.ConfirmPassword)
                 @Html.ValidationMessageFor(m => m.ConfirmPassword)
             </li>
+            <li>
+                @Html.LabelFor(m => m.Phone)
+                @Html.TextBoxFor(m => m.Phone)
+                @Html.ValidationMessageFor(m => m.Phone)
+            </li>
+            @*<li>
+                @Html.LabelFor(m => m.Role)
+                @Html.DropDownListFor(m => m.Role, new SelectList(Roles.GetAllRoles()))
+                @Html.ValidationMessageFor(m => m.Role)
+            </li>*@
+            <li>
+                @Html.LabelFor(m => m.OrganizationId)
+                @*@Html.DropDownListFor(m => m.OrganizationId, new SelectList(ViewBag.Organizations, "OrganizationId", "Name"))*@
+                @Html.TextBoxFor(m => m.OrganizationName)
+                @Html.ValidationMessageFor(m => m.OrganizationName)
+            </li>
+             
         </ol>
         <input type="submit" value="Register" />
     </fieldset>
 }
+
+<script type="text/javascript">
+    $(function () {
+     
+        var $input = $('#OrganizationName')
+            .autocomplete({
+                source: '@Url.Action("GetOrganizations","Account")',
+                minLength: 0
+            })
+            .addClass("ui-widget ui-widget-content ui-corner-left");
+
+        $("<button type='button'>&nbsp;</button>")
+            .attr("tabIndex", -1)
+            .attr("title", "Show All Items")
+            .insertAfter($input)
+            .button({
+                icons: {
+                    primary: "ui-icon-triangle-1-s"
+                },
+                text: false
+            })
+            .removeClass("ui-corner-all")
+            .addClass("ui-corner-right ui-button-icon")
+            .click(function () {
+                if ($input.autocomplete("widget").is(":visible")) {
+                    $input.autocomplete("close");
+                    return;
+                }
+                $(this).blur();
+                $input.autocomplete("search", "");
+                $input.focus();
+            });
+        //        $('#OrganizationId').combobox();
+        //        $('#OrganizationId').removeAttr('data-val');
+        //        $('#OrganizationId').parent().find('input.ui-widget-content').attr('name', 'OrganizationName').attr('id', 'OrganizationName');
+    })
+</script>

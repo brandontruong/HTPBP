@@ -1,11 +1,10 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using System.Text;
 using System.Web.Security;
 using BP.Domain.Abstract;
-using System.Web;
 using BP.Domain.Entities;
+using BP.Domain.Helpers;
 
 namespace BP.Domain.Concrete
 {
@@ -30,35 +29,57 @@ namespace BP.Domain.Concrete
         }
 
 
-        public MembershipCreateStatus CreateUser(UserModel user)
+        public MembershipCreateStatus CreateUser(UserModel userModel, out string error)
         {
+            // Check if there is already someone from that organization registered with the system
+            error = string.Empty;
+            var registerUser = GetUsers().FirstOrDefault(u => u.OrganizationName == userModel.OrganizationName && u.Role == RoleTypes.TeamLeader);
+            
+            if (registerUser != null && userModel.Role == RoleTypes.TeamLeader)
+            {
+                var fullName = string.Format("{0} {1}", registerUser.GivenName, registerUser.FamilyName);
+                error =
+                    string.Format(
+                        "{0} has already registered for {1}. Please contact {0} to create an account for you", fullName,
+                        registerUser.OrganizationName);
+                return MembershipCreateStatus.UserRejected;
+            }
+
+            // Check if we have that organization registered
+            var organization = _context.Organizations.FirstOrDefault(o => o.Name == userModel.OrganizationName);
+            
+            if (organization == null)
+            {
+                _context.Organizations.Add(new Organization { Name = userModel.OrganizationName, OrganizationId = Guid.NewGuid() });
+                _context.SaveChanges();
+
+                organization = _context.Organizations.FirstOrDefault(o => o.Name == userModel.OrganizationName);
+            }
+                
             MembershipCreateStatus createStatus;
-            var newUser = Membership.CreateUser(user.Email, user.Password, user.Email, passwordQuestion: null, passwordAnswer: null, isApproved: true, providerUserKey: null, status: out createStatus);
+            var newUser = Membership.CreateUser(userModel.Email, userModel.Password, userModel.Email, passwordQuestion: null, passwordAnswer: null, isApproved: true, providerUserKey: null, status: out createStatus);
 
             if (createStatus == MembershipCreateStatus.Success)
             {
-                Roles.AddUserToRole(user.Email, user.Role);
+                Roles.AddUserToRole(userModel.Email, userModel.Role);
 
                 _context.UserProfiles.Add(new UserProfile
                     {
                         UserProfileId = Guid.NewGuid(),
                         UserId = (Guid)newUser.ProviderUserKey,
-                        GivenName = user.GivenName,
-                        FamilyName = user.FamilyName,
-                        Phone = user.Phone,
-                        OrganizationId = user.OrganizationId
+                        GivenName = userModel.GivenName,
+                        FamilyName = userModel.FamilyName,
+                        Phone = userModel.Phone,
+                        OrganizationId = organization.OrganizationId
 
                     });
 
-                if (_context.BikePlanApplications.FirstOrDefault(b => b.OrganizationId == user.OrganizationId) == null)
+                if (_context.BikePlanApplications.FirstOrDefault(b => b.OrganizationId == organization.OrganizationId) == null)
                 {
-                    _context.BikePlanApplications.Add(new BikePlanApplication {OrganizationId = user.OrganizationId});
+                    _context.BikePlanApplications.Add(new BikePlanApplication { BikePlanApplicationId = Guid.NewGuid(), OrganizationId = organization.OrganizationId });
                 }
 
                 _context.SaveChanges();
-      
-                FormsAuthentication.SetAuthCookie(user.Email, createPersistentCookie: false);
-               
             }
 
             return createStatus;

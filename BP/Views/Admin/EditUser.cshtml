@@ -97,6 +97,12 @@
 
 <script type="text/javascript">
     $(function () {
-        $('#OrganizationId').combobox();
+        //$('#OrganizationId').combobox();
+
+        $('#FamilyName')
+            .autocomplete({
+                source: '@Url.Action("GetOrganizations")',
+                minLength: 2
+            });
     })
 </script>

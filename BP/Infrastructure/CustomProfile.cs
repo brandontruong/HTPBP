@@ -40,6 +40,15 @@ namespace BP.Infrastructure
             set { base["Organization"] = value; Save();}
         }
 
+        public Guid OrganizationId
+        {
+            get
+            {
+                return ((Guid)base["OrganizationId"]);
+            }
+            set { base["OrganizationId"] = value; Save(); }
+        }
+
         public Guid BikePlanApplicationId
         {
             get

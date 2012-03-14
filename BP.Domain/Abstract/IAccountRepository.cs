@@ -9,7 +9,7 @@ namespace BP.Domain.Abstract
     {
         bool IsValidLogin(string username, string password);
         IEnumerable<UserModel> GetUsers();
-        MembershipCreateStatus CreateUser(UserModel user);
+        MembershipCreateStatus CreateUser(UserModel user, out string error);
         UserProfile GetUserProfileByUserName(string username);
 
         bool DeleteUser(Guid id, out string error);

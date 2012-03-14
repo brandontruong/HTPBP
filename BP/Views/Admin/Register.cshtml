@@ -13,8 +13,9 @@
     Passwords are required to be a minimum of @Membership.MinRequiredPasswordLength characters in length.
 </p>
 
-<script src="~/Scripts/jquery.validate.min.js"></script>
-<script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
+@Content.Script("jquery.validate.min.js", Url)
+@Content.Script("jquery.validate.unobtrusive.min.js", Url)
+@*@Content.Script("jquery.ui.combobox.js", Url)*@
 
 @using (Html.BeginForm("Register", "Account")) {
     @Html.ValidationSummary(true, "Account creation was unsuccessful. Please correct the errors and try again.")
@@ -64,6 +65,18 @@
             </li>
              
         </ol>
+        @Html.ActionLink("Cancel", "Users")
         <input type="submit" value="Register" />
     </fieldset>
 }
+
+<script type="text/javascript">
+    $(function () {
+//        $('#OrganizationId').combobox();
+        $('#FamilyName')
+            .autocomplete({
+                source: '@Url.Action("GetOrganizations")',
+                minLength: 2
+            });
+    })
+</script>

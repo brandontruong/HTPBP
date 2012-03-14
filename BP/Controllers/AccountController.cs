@@ -5,6 +5,7 @@ using System.Web.Helpers;
 using System.Web.Mvc;
 using System.Web.Profile;
 using System.Web.Security;
+using BP.Domain.Helpers;
 using BP.Helpers;
 using BP.Infrastructure;
 using BP.Models;
@@ -48,23 +49,11 @@ namespace BP.Controllers
                 if (_unitOfWork.Accounts.IsValidLogin(model.UserName, model.Password))
                 {
                     FormsAuthentication.SetAuthCookie(model.UserName, model.RememberMe);
-                    
+
+                    LoadProfile(model.UserName);
+
                     var role = Roles.GetRolesForUser(model.UserName);
 
-                    var userProfile = _unitOfWork.Accounts.GetUserProfileByUserName(model.UserName);
-                    if (userProfile != null)
-                    {
-                        var profile = CustomProfile.GetProfile(model.UserName);
-
-                        profile.FamilyName = userProfile.FamilyName;
-                        profile.GivenName = userProfile.GivenName;
-                        profile.Role = role[0];
-                        profile.Organization = _unitOfWork.Organizations.GetById(userProfile.OrganizationId).Name;
-                        var bikePlanApplication = _unitOfWork.BikePlanApplications.Get(b => b.OrganizationId == userProfile.OrganizationId).FirstOrDefault();
-                        if (bikePlanApplication != null) profile.BikePlanApplicationId = bikePlanApplication.BikePlanApplicationId;
-                        
-                    }
-           
                     if (role.Contains(RoleTypes.Admin))
                     {
                         var urlReferrer = (HttpContext.Request).UrlReferrer;
@@ -77,12 +66,12 @@ namespace BP.Controllers
                         if (urlReferrer != null)
                             returnUrl = string.Format("{0}bikeplan", urlReferrer.AbsoluteUri);
                     }
-                    else if (role.Contains(RoleTypes.TeamMember))
-                    {
-                        var urlReferrer = (HttpContext.Request).UrlReferrer;
-                        if (urlReferrer != null)
-                            returnUrl = string.Format("{0}teammember", urlReferrer.AbsoluteUri);
-                    }
+                    //else if (role.Contains(RoleTypes.TeamMember))
+                    //{
+                    //    var urlReferrer = (HttpContext.Request).UrlReferrer;
+                    //    if (urlReferrer != null)
+                    //        returnUrl = string.Format("{0}teammember", urlReferrer.AbsoluteUri);
+                    //}
                     else if (role.Contains(RoleTypes.Buddy))
                     {
                         var urlReferrer = (HttpContext.Request).UrlReferrer;
@@ -100,6 +89,25 @@ namespace BP.Controllers
 
             // If we got this far, something failed
             return Json(new { errors = GetErrorsFromModelState() });
+        }
+
+        private void LoadProfile(string username)
+        {
+            var userProfile = _unitOfWork.Accounts.GetUserProfileByUserName(username);
+            var role = Roles.GetRolesForUser(username);
+            if (userProfile != null)
+            {
+                var profile = CustomProfile.GetProfile(username);
+
+                profile.FamilyName = userProfile.FamilyName;
+                profile.GivenName = userProfile.GivenName;
+                profile.Role = role[0];
+                profile.Organization = _unitOfWork.Organizations.GetById(userProfile.OrganizationId).Name;
+                profile.OrganizationId = userProfile.OrganizationId;
+                var bikePlanApplication = _unitOfWork.BikePlanApplications.Get(b => b.OrganizationId == userProfile.OrganizationId).FirstOrDefault();
+                if (bikePlanApplication != null) profile.BikePlanApplicationId = bikePlanApplication.BikePlanApplicationId;
+
+            }
         }
 
         //
@@ -147,6 +155,14 @@ namespace BP.Controllers
             return ContextDependentView();
         }
 
+        [AllowAnonymous]
+        public JsonResult GetOrganizations(string term)
+        {
+            //var organizations = _unitOfWork.Organizations.Get(o => o.Name.Contains(term)).Select(o => new { label = o.Name, value = o.OrganizationId });
+            var organizations = _unitOfWork.Organizations.Get(o => o.Name.Contains(term)).Select(o => o.Name);
+            return Json(organizations, JsonRequestBehavior.AllowGet);
+        }
+
         //
         // POST: /Account/JsonRegister
 
@@ -157,9 +173,12 @@ namespace BP.Controllers
             if (ModelState.IsValid)
             {
                 // Attempt to register the user
-                MembershipCreateStatus createStatus;
-                //Membership.CreateUser(model.UserName, model.Password, model.Email, passwordQuestion: null, passwordAnswer: null, isApproved: true, providerUserKey: null, status: out createStatus);
-                Membership.CreateUser(model.Email, model.Password, model.Email, passwordQuestion: null, passwordAnswer: null, isApproved: true, providerUserKey: null, status: out createStatus);
+                string error;
+
+                // By default, only team lead can register because they are the first person from that organization to register
+                model.Role = RoleTypes.TeamLeader;
+                var createStatus = _unitOfWork.Accounts.CreateUser(Mapper.Map<RegisterViewModel, UserModel>(model), out error);
+
                 if (createStatus == MembershipCreateStatus.Success)
                 {
                     FormsAuthentication.SetAuthCookie(model.Email, createPersistentCookie: false);
@@ -167,7 +186,8 @@ namespace BP.Controllers
                 }
                 else
                 {
-                    ModelState.AddModelError("", ErrorCodeToString(createStatus));
+                    //ModelState.AddModelError("", ErrorCodeToString(createStatus));
+                    ModelState.AddModelError("", String.IsNullOrEmpty(error) ? Helper.ErrorCodeToString(createStatus) : error);
                 }
             }
 
@@ -185,29 +205,39 @@ namespace BP.Controllers
             if (ModelState.IsValid)
             {
                // Attempt to register the user
-                var createStatus = _unitOfWork.Accounts.CreateUser(Mapper.Map<RegisterViewModel, UserModel>(model));
+                string error;
+
+                // By default, only team lead can register because they are the first person from that organization to register
+                model.Role = RoleTypes.TeamLeader;
+
+                var createStatus = _unitOfWork.Accounts.CreateUser(Mapper.Map<RegisterViewModel, UserModel>(model), out error);
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
-                    
-                    //Send confirmation email
-                    try {
-                        WebMail.SmtpServer = "smtp.gmail.com";
-                        WebMail.SmtpPort = 587;
-                        WebMail.EnableSsl = true;
-                        WebMail.UserName = "admin@simpleit.somee.com";
-                        WebMail.Password = "Eoo62oo8";
-                        WebMail.From = "admin@simpleit.somee.com";
+                    FormsAuthentication.SetAuthCookie(model.Email, createPersistentCookie: false);
 
-                        WebMail.Send(model.Email, "Registration Confirmation",
-                            "Hi " + model.FamilyName + ", you are now member of the HTPBP online application.");
+                    LoadProfile(model.Email);
+
+                    //Send confirmation email
+                    //try {
+                    //    WebMail.SmtpServer = "smtp.gmail.com";
+                    //    WebMail.SmtpPort = 587;
+                    //    WebMail.EnableSsl = true;
+                    //    WebMail.UserName = "admin@simpleit.somee.com";
+                    //    WebMail.Password = "Eoo62oo8";
+                    //    WebMail.From = "admin@simpleit.somee.com";
+
+                    //    WebMail.Send(model.Email, "Registration Confirmation",
+                    //        "Hi " + model.FamilyName + ", you are now member of the HTPBP online application.");
             
-                    } catch (Exception) {
-                        //@:<b>Sorry - we couldn't send the email to confirm your RSVP.</b> 
-                    }
-                    return RedirectToAction("Index", "Home");
+                    //} catch (Exception) {
+                    //    //@:<b>Sorry - we couldn't send the email to confirm your RSVP.</b> 
+                    //}
+
+                    return RedirectToAction("Index", "BikePlan");
                 }
-                ModelState.AddModelError("", ErrorCodeToString(createStatus));
+
+                ModelState.AddModelError("", String.IsNullOrEmpty(error)? Helper.ErrorCodeToString(createStatus): error);
             }
 
             // If we got this far, something failed, redisplay form
@@ -292,44 +322,6 @@ namespace BP.Controllers
             return ModelState.SelectMany(x => x.Value.Errors.Select(error => error.ErrorMessage));
         }
 
-        #region Status Codes
-        private static string ErrorCodeToString(MembershipCreateStatus createStatus)
-        {
-            // See http://go.microsoft.com/fwlink/?LinkID=177550 for
-            // a full list of status codes.
-            switch (createStatus)
-            {
-                case MembershipCreateStatus.DuplicateUserName:
-                    return "User name already exists. Please enter a different user name.";
-
-                case MembershipCreateStatus.DuplicateEmail:
-                    return "A user name for that e-mail address already exists. Please enter a different e-mail address.";
-
-                case MembershipCreateStatus.InvalidPassword:
-                    return "The password provided is invalid. Please enter a valid password value.";
-
-                case MembershipCreateStatus.InvalidEmail:
-                    return "The e-mail address provided is invalid. Please check the value and try again.";
-
-                case MembershipCreateStatus.InvalidAnswer:
-                    return "The password retrieval answer provided is invalid. Please check the value and try again.";
-
-                case MembershipCreateStatus.InvalidQuestion:
-                    return "The password retrieval question provided is invalid. Please check the value and try again.";
-
-                case MembershipCreateStatus.InvalidUserName:
-                    return "The user name provided is invalid. Please check the value and try again.";
-
-                case MembershipCreateStatus.ProviderError:
-                    return "The authentication provider returned an error. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
-
-                case MembershipCreateStatus.UserRejected:
-                    return "The user creation request has been canceled. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
-
-                default:
-                    return "An unknown error occurred. Please verify your entry and try again. If the problem persists, please contact your system administrator.";
-            }
-        }
-        #endregion
+        
     }
 }
