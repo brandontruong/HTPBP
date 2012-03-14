@@ -83,8 +83,7 @@
             Granted permission to milestone
         </div>
         <div class="editor-field">
-            @*@Html.EditorFor(model => model.Role)*@
-            @Html.DropDownListFor(model => model.Role, new[]
+            @Html.DropDownList("SelctedMilstones", new SelectList
                                                      {
                                                          new SelectListItem(){Text = RoleTypes.Approver}, 
                                                          new SelectListItem(){Text = RoleTypes.Author}, 
