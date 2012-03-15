@@ -1,6 +1,33 @@
 ﻿<RecentFiles>
   <RecentFiles>
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:AdminController.cs" caret="0" fromTop="0" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:AccountRepository.cs" caret="352" fromTop="14" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:UnitOfWork.cs" caret="300" fromTop="11" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:EmailService.cs" caret="182" fromTop="8" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Infrastructure/f:NinjectControllerFactory.cs" caret="1934" fromTop="16" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/f:Global.asax.cs" caret="632" fromTop="22" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/f:Web.config" caret="869" fromTop="7" />
     <File id="EEDDF3F2-C072-4F32-8E45-E2BEDDBF3D78/f:AccountRepositoryTest.cs" caret="0" fromTop="0" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Abstract/f:IEmailService.cs" caret="285" fromTop="9" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:BikePlanController.cs" caret="11861" fromTop="14" />
   </RecentFiles>
-  <RecentEdits />
+  <RecentEdits>
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:EmailService.cs" caret="1092" fromTop="17" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:EmailService.cs" caret="760" fromTop="16" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:EmailService.cs" caret="1051" fromTop="24" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Abstract/f:IEmailService.cs" caret="285" fromTop="9" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:EmailService.cs" caret="266" fromTop="4" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:EmailService.cs" caret="388" fromTop="9" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:EmailService.cs" caret="891" fromTop="22" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:EmailService.cs" caret="67" fromTop="2" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:BikePlanController.cs" caret="1089" fromTop="13" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Infrastructure/f:NinjectControllerFactory.cs" caret="1864" fromTop="15" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:BikePlanController.cs" caret="12160" fromTop="26" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:BikePlanController.cs" caret="12160" fromTop="14" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/f:Global.asax.cs" caret="47" fromTop="2" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/f:Global.asax.cs" caret="1821" fromTop="13" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/f:Web.config" caret="1333" fromTop="8" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/f:Web.config" caret="869" fromTop="7" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:BikePlanController.cs" caret="11861" fromTop="14" />
+  </RecentEdits>
 </RecentFiles>

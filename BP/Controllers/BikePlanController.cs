@@ -269,7 +269,9 @@ namespace BP.Controllers
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
+                    // Add user permission
                     
+
                     //_emailService.SendEmail(viewModel.Email, "Registration Confirmation",
                     //                        "Hi " + viewModel.FamilyName +
                     //                        ", you are now member of the HTPBP online application.", out error);
