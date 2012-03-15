@@ -7,12 +7,13 @@ m.git/refs/heads
 m.git/refs/remotes/origin
 rBP
 mBP.Domain
-rBP.Domain/bin/Debug
-rBP.Domain/obj/Debug
+mBP.Domain/bin/Debug
+mBP.Domain/obj/Debug
 mBP.Tests
-rBP.Tests/bin/Debug
-rBP.Tests/obj/Debug
+mBP.Tests/bin/Debug
+mBP.Tests/obj/Debug
 mBP/Controllers
+mBP/Infrastructure
 mBP/Views/BikePlan
 mBP/_ReSharper.BP
 mBP/_ReSharper.BP/BuildScriptCache
@@ -36,4 +37,4 @@ mBP/_ReSharper.BP/WordIndex
 mBP/_ReSharper.BP/WordIndex/3
 mBP/_ReSharper.BP/WordIndex/4
 rBP/bin
-rBP/obj/Debug
+mBP/obj/Debug
