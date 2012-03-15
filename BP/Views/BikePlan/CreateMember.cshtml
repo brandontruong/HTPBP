@@ -1,4 +1,5 @@
-﻿@using BP.Domain.Helpers
+﻿@using BP.Domain.Entities
+@using BP.Domain.Helpers
 @using BP.Helpers
 @model BP.ViewModels.RegisterViewModel
 
@@ -83,12 +84,28 @@
             Granted permission to milestone
         </div>
         <div class="editor-field">
-            @Html.DropDownList("SelctedMilstones", new SelectList
-                                                     {
-                                                         new SelectListItem(){Text = RoleTypes.Approver}, 
-                                                         new SelectListItem(){Text = RoleTypes.Author}, 
-                                                     }, "choose a role")
-            @Html.ValidationMessageFor(model => model.Role)
+            
+            @foreach(Milestone milestone in ViewBag.Milestones)
+            {
+                <div class="milestones">
+                    <input value="@milestone.MilestoneId" title="@milestone.Title" name="milestone" type="checkbox"  />@milestone.Title<br />
+                    @{
+                        var steps = (IEnumerable<Step>)ViewBag.Steps;
+                        var list = new List<CheckBoxListInfo>();
+                        list.AddRange(steps.Where(s => s.MilestoneId == milestone.MilestoneId).OrderBy(s => s.DisplayOrder).Select(m => new CheckBoxListInfo(m.StepId.ToString(), m.Name, false)).ToList());
+                        if (list.Any())
+                        {
+                            <div style="padding-left: 20px;" class="steps">@Html.CheckBoxList("step", list)</div>        
+                        }        
+                    }
+               </div>
+            }
+            
+            @* @{
+                var list = new List<CheckBoxListInfo>();
+                list.AddRange(ViewBag.Milestones);
+            }
+            @Html.CheckBoxList("milestone", list)*@
         </div>
 
         <p>
@@ -100,3 +117,17 @@
 <div>
     @Html.ActionLink("Back to List", "Index")
 </div>
+
+<script type="text/javascript">
+    $(function () {
+        $('.milestones > input:checkbox').click(function () {
+            var thisCheck = $(this);
+            if (thisCheck.is(':checked')) {
+                $('.steps > input:checkbox', thisCheck.parent()).prop("checked", true);
+            }
+            else {
+                $('.steps > input:checkbox', thisCheck.parent()).prop("checked", false);
+            }
+        });
+    })
+</script>

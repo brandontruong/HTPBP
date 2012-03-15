@@ -148,6 +148,7 @@
     <Compile Include="Controllers\MilestoneController.cs" />
     <Compile Include="Controllers\MyNinjectModules.cs" />
     <Compile Include="Helpers\Helper.cs" />
+    <Compile Include="Helpers\InputExtensions.cs" />
     <Compile Include="Helpers\SessionConstants.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>

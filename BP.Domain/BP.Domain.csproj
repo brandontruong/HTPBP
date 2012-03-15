@@ -48,6 +48,7 @@
     <Reference Include="System.Data.Entity" />
     <Reference Include="System.Web" />
     <Reference Include="System.Web.ApplicationServices" />
+    <Reference Include="System.Web.Helpers, Version=2.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL" />
     <Reference Include="System.Web.Mvc, Version=4.0.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\BP\_bin_deployableAssemblies\System.Web.Mvc.dll</HintPath>
@@ -59,11 +60,13 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Abstract\IEmailService.cs" />
     <Compile Include="Abstract\IAccountRepository.cs" />
     <Compile Include="Abstract\IRepository.cs" />
     <Compile Include="Abstract\IUnitOfWork.cs" />
     <Compile Include="Concrete\AccountRepository.cs" />
     <Compile Include="Concrete\BPContext.cs" />
+    <Compile Include="Concrete\EmailService.cs" />
     <Compile Include="Concrete\GenericRepository.cs" />
     <Compile Include="Concrete\UnitOfWork.cs" />
     <Compile Include="Entities\BikePlanApplication.cs" />

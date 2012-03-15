@@ -40,7 +40,7 @@ namespace BP.Infrastructure
             //_ninjectKernel.Bind<IOrganizationRepository>().ToConstant(mock.Object);
 
             //_ninjectKernel.Bind<IOrganizationRepository>().To<OrganizationRepository>();
-            //_ninjectKernel.Bind<IAccountRepository>().To<AccountRepository>();
+            _ninjectKernel.Bind<IEmailService>().To<EmailService>();
             _ninjectKernel.Bind<IUnitOfWork>().To<UnitOfWork>();
 
         }

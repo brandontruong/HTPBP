@@ -1,10 +1,18 @@
+m
 m.git
 m.git/logs
 m.git/logs/refs/heads
 m.git/logs/refs/remotes/origin
 m.git/refs/heads
 m.git/refs/remotes/origin
-mBP
+rBP
+mBP.Domain
+rBP.Domain/bin/Debug
+rBP.Domain/obj/Debug
+mBP.Tests
+rBP.Tests/bin/Debug
+rBP.Tests/obj/Debug
+mBP/Controllers
 mBP/Views/BikePlan
 mBP/_ReSharper.BP
 mBP/_ReSharper.BP/BuildScriptCache
@@ -14,6 +22,7 @@ mBP/_ReSharper.BP/ConditionalNames
 mBP/_ReSharper.BP/ConditionalNames/0
 mBP/_ReSharper.BP/JavaScriptCache
 mBP/_ReSharper.BP/JavaScriptCache/8
+mBP/_ReSharper.BP/JbPdbInfo
 mBP/_ReSharper.BP/MVC
 mBP/_ReSharper.BP/MVC/2
 mBP/_ReSharper.BP/NamedArguments
@@ -27,3 +36,4 @@ mBP/_ReSharper.BP/WordIndex
 mBP/_ReSharper.BP/WordIndex/3
 mBP/_ReSharper.BP/WordIndex/4
 rBP/bin
+rBP/obj/Debug

@@ -1,0 +1,5 @@
+<Modules>
+  <Module PersistentId="EEDDF3F2-C072-4F32-8E45-E2BEDDBF3D78" ModuleId="BP.Tests" />
+  <Module PersistentId="62A74CAA-38A4-4749-B4FA-1584F4E00BC9" ModuleId="BP" />
+  <Module PersistentId="2B22C75F-27C9-4C97-A74E-A7E98B6E5133" ModuleId="BP.Domain" />
+</Modules>

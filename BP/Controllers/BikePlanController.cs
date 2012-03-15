@@ -32,10 +32,12 @@ namespace BP.Controllers
         //
         // GET: /Admin/
         private readonly IUnitOfWork _unitOfWork;
+        private readonly IEmailService _emailService;
 
-        public BikePlanController(IUnitOfWork unitOfWork)
+        public BikePlanController(IUnitOfWork unitOfWork, IEmailService emailService)
         {
             _unitOfWork = unitOfWork;
+            _emailService = emailService;
         }
 
         public ActionResult Index()
@@ -248,12 +250,13 @@ namespace BP.Controllers
 
         public ActionResult CreateMember()
         {
-            ViewBag.Milestones = _unitOfWork.Milestones.Get().OrderBy(m => m.DisplayOrder);
+            ViewBag.Milestones = _unitOfWork.Milestones.Get().OrderBy(m => m.DisplayOrder); //.Select(m => new CheckBoxListInfo(m.MilestoneId.ToString(), m.Title, false)).ToList();
+            ViewBag.Steps = _unitOfWork.Steps.Get();
             return View();
         }
 
         [HttpPost]
-        public ActionResult CreateMember(RegisterViewModel viewModel)
+        public ActionResult CreateMember(string[] milestone, string[] step, RegisterViewModel viewModel)
         {
              if (ModelState.IsValid)
             {
@@ -266,24 +269,11 @@ namespace BP.Controllers
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
-                    //LoadProfile(model.Email);
-
-                    //Send confirmation email
-                    //try {
-                    //    WebMail.SmtpServer = "smtp.gmail.com";
-                    //    WebMail.SmtpPort = 587;
-                    //    WebMail.EnableSsl = true;
-                    //    WebMail.UserName = "admin@simpleit.somee.com";
-                    //    WebMail.Password = "Eoo62oo8";
-                    //    WebMail.From = "admin@simpleit.somee.com";
-
-                    //    WebMail.Send(model.Email, "Registration Confirmation",
-                    //        "Hi " + model.FamilyName + ", you are now member of the HTPBP online application.");
-            
-                    //} catch (Exception) {
-                    //    //@:<b>Sorry - we couldn't send the email to confirm your RSVP.</b> 
-                    //}
-
+                    
+                    //_emailService.SendEmail(viewModel.Email, "Registration Confirmation",
+                    //                        "Hi " + viewModel.FamilyName +
+                    //                        ", you are now member of the HTPBP online application.", out error);
+        
                     return RedirectToAction("Team");
                 }
 

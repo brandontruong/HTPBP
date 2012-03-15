@@ -1,15 +1,5 @@
 ﻿<RecentFiles>
   <RecentFiles>
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:ViewModels/f:RegisterViewModel.cs" caret="0" fromTop="0" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:Team.cshtml" caret="0" fromTop="0" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:AdminController.cs" caret="0" fromTop="0" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:Admin/f:Users.cshtml" caret="0" fromTop="0" />
-    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Entities/f:UserModel.cs" caret="0" fromTop="0" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/f:Global.asax.cs" caret="0" fromTop="0" />
-    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Abstract/f:IUnitOfWork.cs" caret="0" fromTop="0" />
-    <File id="1863AE59-D129-4B36-A204-F320765CCA2A/f:PdfView_old.aspx" caret="0" fromTop="0" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:Shared/f:_BPLayout.cshtml" caret="0" fromTop="0" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:PDFView.cshtml" caret="0" fromTop="0" />
     <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Content/d:themes/d:base/f:jquery.ui.autocomplete.css" caret="0" fromTop="0" />
     <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Infrastructure/f:CustomProfile.cs" caret="0" fromTop="0" />
     <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:Shared/f:_LoginPartial.cshtml" caret="0" fromTop="0" />
@@ -28,28 +18,20 @@
     <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:Admin/f:Index.cshtml" caret="0" fromTop="0" />
     <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Infrastructure/d:iMvcPdf/f:PdfResult.cs" caret="0" fromTop="0" />
     <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Infrastructure/d:iMvcPdf/f:PdfFromHtmlResult.cs" caret="0" fromTop="0" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:BikePlanController.cs" caret="10782" fromTop="13" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:CreateMember.cshtml" caret="3012" fromTop="13" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Abstract/f:IUnitOfWork.cs" caret="293" fromTop="11" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Entities/f:Step.cs" caret="286" fromTop="9" />
+    <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:AccountRepository.cs" caret="1282" fromTop="27" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:CreateMember.cshtml" caret="3932" fromTop="27" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:BikePlanController.cs" caret="11118" fromTop="0" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Helpers/f:InputExtensions.cs" caret="1400" fromTop="5" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:AccountController.cs" caret="3493" fromTop="22" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Infrastructure/f:NinjectControllerFactory.cs" caret="0" fromTop="0" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:Team.cshtml" caret="0" fromTop="0" />
+    <File id="EEDDF3F2-C072-4F32-8E45-E2BEDDBF3D78/f:AccountControllerTest.cs" caret="660" fromTop="19" />
+    <File id="EEDDF3F2-C072-4F32-8E45-E2BEDDBF3D78/f:AccountRepositoryTest.cs" caret="347" fromTop="13" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:AdminController.cs" caret="0" fromTop="0" />
   </RecentFiles>
   <RecentEdits>
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:Team.cshtml" caret="714" fromTop="19" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:Team.cshtml" caret="1040" fromTop="15" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:Team.cshtml" caret="779" fromTop="3" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:Team.cshtml" caret="1557" fromTop="23" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:CreateMember.cshtml" caret="193" fromTop="7" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:CreateMember.cshtml" caret="498" fromTop="18" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:CreateMember.cshtml" caret="2696" fromTop="11" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:AccountController.cs" caret="2400" fromTop="19" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:BikePlanController.cs" caret="10927" fromTop="8" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:BikePlanController.cs" caret="12695" fromTop="45" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:BikePlanController.cs" caret="11515" fromTop="13" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:AccountController.cs" caret="11719" fromTop="12" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Helpers/f:SessionConstants.cs" caret="0" fromTop="0" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Helpers/f:Helper.cs" caret="2418" fromTop="48" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:AccountController.cs" caret="9122" fromTop="17" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Helpers/f:Helper.cs" caret="227" fromTop="11" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:BikePlanController.cs" caret="12530" fromTop="16" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:BikePlanController.cs" caret="11268" fromTop="11" />
     <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:AccountController.cs" caret="7052" fromTop="14" />
     <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Helpers/f:RoleTypes.cs" caret="75" fromTop="0" />
     <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Helpers/f:RoleTypes.cs" caret="23" fromTop="0" />
@@ -59,8 +41,26 @@
     <File id="2B22C75F-27C9-4C97-A74E-A7E98B6E5133/d:Concrete/f:AccountRepository.cs" caret="3532" fromTop="5" />
     <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:AccountController.cs" caret="8031" fromTop="17" />
     <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:AccountController.cs" caret="6682" fromTop="17" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:CreateMember.cshtml" caret="3483" fromTop="36" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:BikePlanController.cs" caret="10782" fromTop="13" />
-    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:CreateMember.cshtml" caret="3012" fromTop="13" />
+    <File id="EEDDF3F2-C072-4F32-8E45-E2BEDDBF3D78/f:AccountControllerTest.cs" caret="3153" fromTop="21" />
+    <File id="EEDDF3F2-C072-4F32-8E45-E2BEDDBF3D78/f:AccountControllerTest.cs" caret="669" fromTop="19" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Helpers/f:InputExtensions.cs" caret="2581" fromTop="26" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Helpers/f:InputExtensions.cs" caret="2579" fromTop="26" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Helpers/f:InputExtensions.cs" caret="271" fromTop="12" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Helpers/f:InputExtensions.cs" caret="534" fromTop="18" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Helpers/f:InputExtensions.cs" caret="865" fromTop="25" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Helpers/f:InputExtensions.cs" caret="2134" fromTop="8" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:CreateMember.cshtml" caret="3953" fromTop="11" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:BikePlanController.cs" caret="10784" fromTop="13" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:CreateMember.cshtml" caret="4164" fromTop="16" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:CreateMember.cshtml" caret="3952" fromTop="12" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:CreateMember.cshtml" caret="3952" fromTop="15" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:CreateMember.cshtml" caret="3952" fromTop="15" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:CreateMember.cshtml" caret="3952" fromTop="17" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Controllers/f:BikePlanController.cs" caret="11062" fromTop="19" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:CreateMember.cshtml" caret="4636" fromTop="21" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:CreateMember.cshtml" caret="4735" fromTop="24" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:CreateMember.cshtml" caret="3938" fromTop="25" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:CreateMember.cshtml" caret="3341" fromTop="19" />
+    <File id="62A74CAA-38A4-4749-B4FA-1584F4E00BC9/d:Views/d:BikePlan/f:CreateMember.cshtml" caret="3933" fromTop="27" />
   </RecentEdits>
 </RecentFiles>
