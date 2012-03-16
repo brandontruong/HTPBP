@@ -13,6 +13,7 @@ namespace BP.Domain.Concrete
         public DbSet<Task> Tasks { get; set; }
         public DbSet<BikePlanApplication> BikePlanApplications { get; set; }
         public DbSet<TaskOutcome> TaskOutcomes { get; set; }
+        public DbSet<UserPermission> UserPermissions { get; set; }
         public DbSet<vw_UserDetails> Vw_UserDetails { get; set; }
     }
 }

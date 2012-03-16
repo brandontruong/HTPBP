@@ -58,6 +58,24 @@ namespace BP.Infrastructure
             set { base["BikePlanApplicationId"] = value; Save(); }
         }
 
+        public string Company
+        {
+            get
+            {
+                return ((string)base["Company"]);
+            }
+            set { base["Company"] = value; Save(); }
+        }
+
+        public string[] Permissions
+        {
+            get
+            {
+                return ((string[])base["Permissions"]);
+            }
+            set { base["Permissions"] = value; Save(); }
+        }
+
         public static CustomProfile GetProfile(string username)
         {
             return Create(username) as CustomProfile;

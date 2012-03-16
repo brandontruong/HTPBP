@@ -48,5 +48,8 @@ namespace BP.ViewModels
 
         [HiddenInput]
         public Guid UserId { get; set; }
+
+        [Display(Name = "Company")]
+        public string Company { get; set; }
     }
 }

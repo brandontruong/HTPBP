@@ -16,6 +16,7 @@ namespace BP.Domain.Entities
         public string Password { get; set; }
         public Guid OrganizationId { get; set; }
         public string RoleName { get; set; }
-
+        public string Company { get; set; }
+        public bool IsApproved { get; set; }
     }
 }

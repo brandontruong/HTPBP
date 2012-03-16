@@ -49,11 +49,19 @@
             @Html.DisplayFor(modelItem => item.Role)
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { /* id=item.PrimaryKey */ })
+            @Html.ActionLink("Edit", "EditMember", new {  id=item.UserId })
             @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
             @if (item.Role.ToLower() != RoleTypes.TeamLeader)
             {
-                <text>| @Html.ActionLink("Delete", "Delete", new { /* id=item.PrimaryKey */ })</text>
+                if (item.IsApproved)
+                {
+                    <text>| @Html.ActionLink("Deactivate", "DeactivateMember", new { id = item.UserId })</text>
+                }
+
+                else
+                {
+                    <text>| @Html.ActionLink("Reactivate", "ReactivateMember", new { id = item.UserId })</text>
+                }
             }
             
         </td>

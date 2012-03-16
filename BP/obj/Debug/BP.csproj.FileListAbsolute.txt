@@ -146,7 +146,6 @@ C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin
 C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin\Microsoft.Web.Infrastructure.xml
 C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin\Moq.pdb
 C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin\Moq.xml
-C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin\Ninject.pdb
 C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin\Ninject.xml
 C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin\System.Web.Helpers.xml
 C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin\System.Web.Razor.xml
@@ -161,3 +160,7 @@ C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin
 C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin\itextsharp.xtra.dll
 C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin\System.Web.Optimization.dll
 C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin\System.Web.Providers.dll
+C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin\CommonServiceLocator.NinjectAdapter.dll
+C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin\Ninject.Web.Mvc.dll
+C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin\Ninject.Web.Mvc.pdb
+C:\Users\brandon\Documents\Visual Studio 2010\Projects\BikePlan\HTPBP.git\BP\bin\Ninject.Web.Mvc.xml

@@ -16,7 +16,8 @@ namespace BP.Domain.Concrete
         private IRepository<BikePlanApplication> _bikePlanApplications;
         private IRepository<TaskOutcome> _taskOutcomes;
         private IRepository<vw_UserDetails> _vwUserDetails;
-        
+        private IRepository<UserPermission> _userPermission;
+         
         private IRepository<UserProfile> _userProfile;
 
         public IRepository<Organization> Organizations
@@ -130,6 +131,16 @@ namespace BP.Domain.Concrete
             {
                 return _vwUserDetails ??
                    (_vwUserDetails = new GenericRepository<vw_UserDetails>(_context));
+            }
+        }
+
+
+        public IRepository<UserPermission> UserPermissions
+        {
+            get
+            {
+                return _userPermission ??
+                   (_userPermission = new GenericRepository<UserPermission>(_context));
             }
         }
     }

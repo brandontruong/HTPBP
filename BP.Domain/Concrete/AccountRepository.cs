@@ -105,7 +105,7 @@ namespace BP.Domain.Concrete
 
         public UserProfile GetUserProfileByUserName(string username)
         {
-            var user = _context.Users.FirstOrDefault(u => u.UserName == username);
+            var user = _context.Vw_UserDetails.FirstOrDefault(u => u.UserName == username);
             if (user != null)
             {
                 var userId = user.UserId;
@@ -130,6 +130,8 @@ namespace BP.Domain.Concrete
                                       Role = u.RoleName,
                                       OrganizationId = u.OrganizationId,
                                       OrganizationName = u.OrganizationName,
+                                      Company = u.Company,
+                                      IsApproved = u.IsApproved
                                   };
             return user;
 
@@ -170,6 +172,7 @@ namespace BP.Domain.Concrete
                     if (user != null)
                     {
                         user.Email = userModel.Email;
+                        //user.ResetPassword();
                         Membership.UpdateUser(user);
                     }
 
@@ -177,10 +180,17 @@ namespace BP.Domain.Concrete
                 }
                 if (userProfile != null)
                 {
+                    var userRoles = Roles.GetRolesForUser(userModel.Email);
+                    if (!userRoles.Contains(userModel.Role))
+                    {
+                        Roles.RemoveUserFromRoles(userModel.Email, userRoles);
+                        Roles.AddUserToRole(userModel.Email, userModel.Role);
+                    }
                     userProfile.Phone = userModel.Phone;
                     userProfile.FamilyName = userModel.FamilyName;
                     userProfile.GivenName = userModel.GivenName;
                     userProfile.OrganizationId = userModel.OrganizationId;
+                    userProfile.Company = userModel.Company;
                 }
 
                 _context.SaveChanges();
@@ -192,6 +202,32 @@ namespace BP.Domain.Concrete
                 error = ((ex.InnerException).InnerException).Message;
                 return false;
             }
+        }
+
+
+        public bool ActivateUser(Guid userId, bool toBeActive, out string error)
+        {
+            try
+            {
+                error = string.Empty;
+                var user = _context.Users.FirstOrDefault(u => u.UserId == userId);
+                if (user != null)
+                {
+                    var member = Membership.GetUser(user.UserName);
+                    if (member != null)
+                    {
+                        member.IsApproved = toBeActive;
+                        Membership.UpdateUser(member);
+                    }
+                }
+            }
+            catch (Exception ex)
+            {
+                error = ex.Message;
+                return false;
+            }
+           
+            return true;
         }
     }
 }

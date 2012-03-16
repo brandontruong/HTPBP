@@ -25,5 +25,8 @@ namespace BP.Domain.Entities
         public Guid OrganizationId { get; set; }
         public string OrganizationName { get; set; }
 
+        public string Company { get; set; }
+
+        public bool IsApproved { get; set; }
     }
 }

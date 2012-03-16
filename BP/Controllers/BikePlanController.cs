@@ -26,7 +26,7 @@ using iTextSharp.text.xml;
 
 namespace BP.Controllers
 {
-    [Authorize(Roles = "team leader")]
+    [Authorize]
     public class BikePlanController : Controller
     {
         //
@@ -42,11 +42,8 @@ namespace BP.Controllers
 
         public ActionResult Index()
         {
-           
-           
             return RedirectToAction("Milestone", new {milestoneOrder = "1", stepOrder="1"});
 
-            
         }
 
         public ActionResult Register()
@@ -240,6 +237,8 @@ namespace BP.Controllers
         //    // Send the binary data to the browser.
         //    return new BinaryContentResult(buf, "application/pdf");
         //}
+
+        [Authorize(Roles = "team leader")]
         public ActionResult Team()
         {
             var profile = CustomProfile.GetProfile(Profile.UserName);
@@ -248,6 +247,7 @@ namespace BP.Controllers
             return View(users);
         }
 
+        [Authorize(Roles = "team leader")]
         public ActionResult CreateMember()
         {
             ViewBag.Milestones = _unitOfWork.Milestones.Get().OrderBy(m => m.DisplayOrder); //.Select(m => new CheckBoxListInfo(m.MilestoneId.ToString(), m.Title, false)).ToList();
@@ -256,6 +256,7 @@ namespace BP.Controllers
         }
 
         [HttpPost]
+        [Authorize(Roles = "team leader")]
         public ActionResult CreateMember(string[] milestone, string[] step, RegisterViewModel viewModel)
         {
              if (ModelState.IsValid)
@@ -269,8 +270,14 @@ namespace BP.Controllers
 
                 if (createStatus == MembershipCreateStatus.Success)
                 {
+                    var user = _unitOfWork.Accounts.GetUserProfileByUserName(viewModel.Email);
                     // Add user permission
+                    foreach (var s in step)
+                    {
+                        _unitOfWork.UserPermissions.Insert(new UserPermission{StepId = Guid.Parse(s), UserId = user.UserId, UserPermissionId = Guid.NewGuid()});
+                    }
                     
+                    _unitOfWork.Commit();
 
                     //_emailService.SendEmail(viewModel.Email, "Registration Confirmation",
                     //                        "Hi " + viewModel.FamilyName +
@@ -285,6 +292,79 @@ namespace BP.Controllers
             // If we got this far, something failed, redisplay form
             return View(viewModel);
 
+        }
+
+        [Authorize(Roles = "team leader")]
+        public ActionResult EditMember(Guid id)
+        {
+            ViewBag.Milestones = _unitOfWork.Milestones.Get().OrderBy(m => m.DisplayOrder);
+            ViewBag.Steps = _unitOfWork.Steps.Get();
+            ViewBag.UserPermissions = _unitOfWork.UserPermissions.Get(u => u.UserId == id);
+
+            var entityToEdit = _unitOfWork.Accounts.GetUsers().FirstOrDefault(u => u.UserId == id);
+            var viewModel = Mapper.Map<UserModel, RegisterViewModel>(entityToEdit);
+            ViewBag.Organizations = _unitOfWork.Organizations.Get();
+            return View(viewModel);
+        }
+
+        [HttpPost]
+        [Authorize(Roles = "team leader")]
+        public ActionResult EditMember(string[] milestone, string[] step, RegisterViewModel viewModel)
+        {
+            // Dont care about password for now
+            ModelState.Remove("Password");
+
+            if (ModelState.IsValid)
+            {
+                string error;
+                
+                if (_unitOfWork.Accounts.UpdateUser(Mapper.Map<RegisterViewModel, UserModel>(viewModel), out error))
+                {
+                    var grantedSteps = _unitOfWork.UserPermissions.Get(u => u.UserId == viewModel.UserId);
+                    if (grantedSteps != null)
+                    {
+                        foreach (var userPermission in grantedSteps)
+                        {
+                            if (!step.Contains(userPermission.StepId.ToString()))
+                                _unitOfWork.UserPermissions.Delete(userPermission);
+                        }
+                        _unitOfWork.Commit();
+
+                        grantedSteps = _unitOfWork.UserPermissions.Get(u => u.UserId == viewModel.UserId);
+                        // Add user permission
+                        foreach (var s in step.Where(s => !grantedSteps.Any(g => g.StepId.ToString() == s)))
+                        {
+                            _unitOfWork.UserPermissions.Insert(new UserPermission{UserId = viewModel.UserId, StepId = Guid.Parse(s), UserPermissionId = Guid.NewGuid()});
+                        }
+
+                        _unitOfWork.Commit();
+                    }
+
+                    return RedirectToAction("Team");
+                }
+
+                ModelState.AddModelError("", error);
+            }
+
+            // If we got this far, something failed, redisplay form
+            return View(viewModel);
+        }
+
+        [Authorize(Roles = "team leader")]
+        public ActionResult DeactivateMember(Guid id)
+        {
+            string error;
+            if (!_unitOfWork.Accounts.ActivateUser(id, false, out error)) ModelState.AddModelError("", error);
+            return RedirectToAction("Team");
+            
+        }
+
+        [Authorize(Roles = "team leader")]
+        public ActionResult ReactivateMember(Guid id)
+        {
+            string error;
+            if (!_unitOfWork.Accounts.ActivateUser(id, true, out error)) ModelState.AddModelError("", error);
+            return RedirectToAction("Team");
         }
     }
 }

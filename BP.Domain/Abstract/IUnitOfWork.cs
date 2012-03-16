@@ -15,6 +15,7 @@ namespace BP.Domain.Abstract
         IRepository<BikePlanApplication> BikePlanApplications { get; }
         IRepository<TaskOutcome> TaskOutcomes { get; }
         IRepository<vw_UserDetails> VwUserDetails { get; }
+        IRepository<UserPermission> UserPermissions { get; }
         IAccountRepository Accounts { get; }
         
         void Commit();

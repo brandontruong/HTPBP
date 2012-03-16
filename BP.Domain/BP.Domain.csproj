@@ -73,6 +73,7 @@
     <Compile Include="Concrete\GenericRepository.cs" />
     <Compile Include="Concrete\UnitOfWork.cs" />
     <Compile Include="Entities\BikePlanApplication.cs" />
+    <Compile Include="Entities\UserPermission.cs" />
     <Compile Include="Entities\vw_UserDetails.cs" />
     <Compile Include="Entities\TaskOutcome.cs" />
     <Compile Include="Entities\Task.cs" />

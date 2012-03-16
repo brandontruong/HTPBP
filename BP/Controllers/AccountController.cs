@@ -60,25 +60,19 @@ namespace BP.Controllers
                         if (urlReferrer != null)
                             returnUrl = string.Format("{0}admin",urlReferrer.AbsoluteUri);
                     }
-                    else if (role.Contains(RoleTypes.TeamLeader))
-                    {
-                        var urlReferrer = (HttpContext.Request).UrlReferrer;
-                        if (urlReferrer != null)
-                            returnUrl = string.Format("{0}bikeplan", urlReferrer.AbsoluteUri);
-                    }
-                    //else if (role.Contains(RoleTypes.TeamMember))
-                    //{
-                    //    var urlReferrer = (HttpContext.Request).UrlReferrer;
-                    //    if (urlReferrer != null)
-                    //        returnUrl = string.Format("{0}teammember", urlReferrer.AbsoluteUri);
-                    //}
                     else if (role.Contains(RoleTypes.Buddy))
                     {
                         var urlReferrer = (HttpContext.Request).UrlReferrer;
                         if (urlReferrer != null)
                             returnUrl = string.Format("{0}buddy", urlReferrer.AbsoluteUri);
                     }
-
+                    else //if (role.Contains(RoleTypes.TeamLeader))
+                    {
+                        var urlReferrer = (HttpContext.Request).UrlReferrer;
+                        if (urlReferrer != null)
+                            returnUrl = string.Format("{0}bikeplan", urlReferrer.AbsoluteUri);
+                    }
+      
                     return Json(new { success = true, redirect = returnUrl });
                 }
                 else

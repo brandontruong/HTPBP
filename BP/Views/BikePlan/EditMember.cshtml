@@ -1,0 +1,118 @@
+﻿@using BP.Domain.Entities
+@using BP.Domain.Helpers
+@using BP.Helpers
+@using BP.Infrastructure
+@model BP.ViewModels.RegisterViewModel
+
+@{
+    ViewBag.Title = "EditMember";
+    Layout = "~/Views/Shared/_BPLayout.cshtml";
+}
+
+<h2>EditMember</h2>
+
+<script src="@Url.Content("~/Scripts/jquery.validate.min.js")"></script>
+<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")"></script>
+
+@using (Html.BeginForm()) {
+    @Html.ValidationSummary(true)
+
+    <fieldset>
+        <legend>RegisterViewModel</legend>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.OrganizationName)
+        </div>
+        <div class="editor-field">
+            @Html.DisplayFor(model => model.OrganizationName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.GivenName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.GivenName)
+            @Html.ValidationMessageFor(model => model.GivenName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.FamilyName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.FamilyName)
+            @Html.ValidationMessageFor(model => model.FamilyName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Email)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Email)
+            @Html.ValidationMessageFor(model => model.Email)
+        </div>
+
+
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Phone)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Phone)
+            @Html.ValidationMessageFor(model => model.Phone)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Role)
+        </div>
+        <div class="editor-field">
+             @Html.DropDownListFor(model => model.Role, new[]
+                                                     {
+                                                         new SelectListItem(){Text = RoleTypes.Approver}, 
+                                                         new SelectListItem(){Text = RoleTypes.Author}, 
+                                                     })
+            
+            @Html.ValidationMessageFor(model => model.Role)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Company)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.Company)
+        </div>
+        
+          <div class="editor-label">
+            Granted permission to milestone
+        </div>
+        <div class="editor-field">
+            
+            @foreach(Milestone milestone in ViewBag.Milestones)
+            {
+                <div class="milestones">
+                    <input value="@milestone.MilestoneId" title="@milestone.Title" name="milestone" type="checkbox"  />@milestone.Title<br />
+                    @{
+                        var steps = (IEnumerable<Step>)ViewBag.Steps;
+                        var grantedPermission = (IEnumerable<UserPermission>)ViewBag.UserPermissions;
+                        var list = steps.Where(s => s.MilestoneId == milestone.MilestoneId).OrderBy(s => s.DisplayOrder).Select(step => grantedPermission.Any(s => s.StepId == step.StepId) ? new CheckBoxListInfo(step.StepId.ToString(), step.Name, true) : new CheckBoxListInfo(step.StepId.ToString(), step.Name, false)).ToList();
+
+                        if (list.Any())
+                        {
+                            <div style="padding-left: 20px;" class="steps">@Html.CheckBoxList("step", list)</div>        
+                        }        
+                    }
+               </div>
+            }
+        </div>
+
+
+        @Html.HiddenFor(model => model.UserId)
+        @Html.HiddenFor(model => model.OrganizationId)
+        <p>
+            <input type="submit" value="Save" />
+        </p>
+    </fieldset>
+}
+
+<div>
+    @Html.ActionLink("Back to List", "Team")
+</div>

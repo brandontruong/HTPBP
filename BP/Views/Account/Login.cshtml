@@ -13,6 +13,7 @@
 <script src="~/Scripts/jquery.validate.unobtrusive.min.js"></script>
 
 @using (Html.BeginForm((string)ViewBag.FormAction, "Account")) {
+    @Html.Hidden(Request.QueryString.AllKeys[0], Request.QueryString[0])
     @Html.ValidationSummary(true, "Log in was unsuccessful. Please correct the errors and try again.")
 
     <fieldset>

@@ -10,5 +10,6 @@ namespace BP.Domain.Entities
         public string FamilyName { get; set; }
         public string Phone { get; set; }
         public Guid OrganizationId { get; set; }
+        public string Company { get; set; }
     }
 }

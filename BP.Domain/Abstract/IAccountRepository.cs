@@ -15,5 +15,7 @@ namespace BP.Domain.Abstract
         bool DeleteUser(Guid id, out string error);
 
         bool UpdateUser(UserModel userModel, out string error);
+
+        bool ActivateUser(Guid userId, bool toBeActive, out string error);
     }
 }

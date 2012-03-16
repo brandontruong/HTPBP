@@ -37,6 +37,9 @@
     <Reference Include="AutoMapper">
       <HintPath>packages\AutoMapper.2.1.265\lib\net40\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="CommonServiceLocator.NinjectAdapter">
+      <HintPath>packages\Ninject.Web.Mvc3-2.2.2.0-release-net-4.0\lib\extensions\CommonServiceLocator.NinjectAdapter.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=4.1.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>packages\EntityFramework.4.1.10331.0\lib\EntityFramework.dll</HintPath>
@@ -58,8 +61,12 @@
     <Reference Include="Moq">
       <HintPath>packages\Moq.4.0.10827\lib\NET40\Moq.dll</HintPath>
     </Reference>
-    <Reference Include="Ninject">
-      <HintPath>packages\Ninject.2.2.1.4\lib\net40-Full\Ninject.dll</HintPath>
+    <Reference Include="Ninject, Version=2.2.0.0, Culture=neutral, PublicKeyToken=c7192dc5380945e7, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>packages\Ninject.Web.Mvc3-2.2.2.0-release-net-4.0\lib\Ninject.dll</HintPath>
+    </Reference>
+    <Reference Include="Ninject.Web.Mvc">
+      <HintPath>packages\Ninject.Web.Mvc3-2.2.2.0-release-net-4.0\Ninject.Web.Mvc.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -148,7 +155,6 @@
     <Compile Include="Controllers\BinaryContentResult.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\MilestoneController.cs" />
-    <Compile Include="Controllers\MyNinjectModules.cs" />
     <Compile Include="Helpers\Helper.cs" />
     <Compile Include="Helpers\InputExtensions.cs" />
     <Compile Include="Helpers\SessionConstants.cs" />
@@ -159,7 +165,6 @@
     <Compile Include="Infrastructure\CustomMembershipProvider.cs" />
     <Compile Include="Infrastructure\CustomProfile.cs" />
     <Compile Include="Infrastructure\iMvcPdf\PdfResult.cs" />
-    <Compile Include="Infrastructure\NinjectControllerFactory.cs" />
     <Compile Include="Infrastructure\iMvcPdf\PdfFromHtmlResult.cs" />
     <Compile Include="Models\AccountModels.cs" />
     <Compile Include="ViewModels\Admin\AdminViewModel.cs" />
@@ -527,6 +532,7 @@
     <Content Include="Views\Admin\EditUser.cshtml" />
     <Content Include="Views\BikePlan\Team.cshtml" />
     <Content Include="Views\BikePlan\CreateMember.cshtml" />
+    <Content Include="Views\BikePlan\EditMember.cshtml" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\README_ENU.txt" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\msvcr90.dll" />
     <None Include="_bin_deployableAssemblies\amd64\Microsoft.VC90.CRT\Microsoft.VC90.CRT.manifest" />
@@ -629,7 +635,7 @@
     <VisualStudio>
       <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
         <WebProjectProperties>
-          <UseIIS>True</UseIIS>
+          <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
           <DevelopmentServerPort>29281</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
